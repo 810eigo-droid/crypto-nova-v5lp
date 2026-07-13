@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Crypto Nova｜ご検討中の方への詳細資料</title>
+<meta name="description" content="Crypto Novaの仕組み・できること・リスクを正直にお伝えする詳細資料です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-deep: #06121F;
+    --gold: #C8A24A;
+    --white: #F7F9FC;
+    --silver: #C9D4E3;
+    --ink: #1C2B3A;
+    --gray: #5A6678;
+    --bg-soft: #F4F6F9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Shippori Mincho', serif;
+    color: var(--ink);
+    background: #fff;
+    font-size: 16px;
+    line-height: 2;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .en {
+    font-family: 'Cormorant Garamond', 'Shippori Mincho', serif;
+    letter-spacing: 0.25em;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 55%, #10294a 100%);
+    color: var(--white);
+    padding: 88px 24px 72px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(200,162,74,0.4);
+    pointer-events: none;
+  }
+  .hero-brand {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.35em;
+    margin-bottom: 20px;
+  }
+  .hero-rule {
+    width: 48px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 28px;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 6vw, 40px);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  .hero-sub {
+    color: var(--silver);
+    font-size: clamp(13px, 3.4vw, 16px);
+    letter-spacing: 0.15em;
+    margin-bottom: 36px;
+  }
+  .hero-lead {
+    color: var(--silver);
+    font-size: 14px;
+    line-height: 2.4;
+  }
+  .hero-note {
+    margin-top: 44px;
+    font-size: 11px;
+    color: #8A94A6;
+    line-height: 1.9;
+  }
+
+  /* ===== TOC ===== */
+  .toc {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 24px;
+  }
+  .sec-label {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    margin-bottom: 6px;
+  }
+  .toc h2 {
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    color: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 14px;
+    margin-bottom: 8px;
+  }
+  .toc ol { list-style: none; }
+  .toc li { border-bottom: 1px dotted var(--silver); }
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 13px 4px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color .25s;
+  }
+  .toc a:hover { color: var(--gold); }
+  .toc-num {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 17px;
+    min-width: 28px;
+  }
+
+  /* ===== SECTIONS ===== */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 24px 0;
+  }
+  section { padding: 44px 0 12px; }
+
+  h2.sec-title {
+    font-size: clamp(20px, 5vw, 25px);
+    color: var(--navy);
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    padding-left: 18px;
+    border-left: 4px solid var(--gold);
+    margin-bottom: 28px;
+  }
+  h2.sec-title .sec-label { display: block; padding: 0; border: none; }
+
+  h3 {
+    font-size: 17px;
+    color: var(--navy);
+    margin: 30px 0 12px;
+    letter-spacing: 0.04em;
+  }
+
+  p { margin-bottom: 18px; text-align: left; }
+
+  .emphasis-box {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--navy);
+    padding: 22px 24px;
+    margin: 26px 0;
+  }
+  .emphasis-box p { margin-bottom: 10px; }
+  .emphasis-box p:last-child { margin-bottom: 0; }
+
+  .gold-box {
+    border: 1px solid var(--gold);
+    padding: 26px 26px 18px;
+    margin: 26px 0;
+  }
+  .gold-box-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  ul.styled { list-style: none; margin: 8px 0 18px; }
+  ul.styled li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.9;
+  }
+  ul.styled li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0.85em;
+    width: 12px; height: 1px;
+    background: var(--gold);
+  }
+
+  .step {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: var(--gold);
+    line-height: 1.1;
+    min-width: 40px;
+  }
+  .step-body h3 { margin-top: 4px; }
+
+  .qa { margin-bottom: 28px; }
+  .qa-q {
+    font-weight: 600;
+    color: var(--navy);
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+  .qa-q::before {
+    content: "Q";
+    font-family: 'Cormorant Garamond', serif;
+    position: absolute;
+    left: 0; top: -2px;
+    color: var(--gold);
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .qa-a {
+    padding-left: 30px;
+    position: relative;
+  }
+  .qa-a::before {
+    content: "A";
+    font-family: 'Cormorant Garamond', serif;
+    position: absolute;
+    left: 0; top: -2px;
+    color: #8A94A6;
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .qa-a p { margin-bottom: 0; }
+
+  .risk-section {
+    background: var(--navy);
+    color: var(--white);
+    padding: 34px 28px;
+    margin: 28px 0;
+  }
+  .risk-section h3 {
+    color: var(--gold);
+    margin-top: 0;
+    letter-spacing: 0.08em;
+  }
+  .risk-section ul.styled li { color: #E8EDF4; }
+
+  /* ===== CTA ===== */
+  .cta-final {
+    text-align: center;
+    border: 1px solid var(--gold);
+    padding: 40px 24px;
+    margin: 36px 0 20px;
+  }
+  .cta-lead {
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 44px;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: background .25s, transform .25s;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 500;
+  }
+  .cta-btn:hover {
+    background: #16345c;
+    transform: translateY(-2px);
+  }
+  .cta-note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  /* ===== PDF DOWNLOAD ===== */
+  .pdf-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--silver);
+    padding: 32px 28px;
+    margin: 36px 0;
+    text-align: center;
+  }
+  .pdf-box .en {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .pdf-box h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+  }
+  .pdf-box p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 22px;
+    text-align: center;
+  }
+  .pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+    padding: 16px 32px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 500;
+    transition: background .25s, color .25s, transform .25s;
+  }
+  .pdf-btn:hover {
+    background: var(--navy);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .pdf-btn svg { flex-shrink: 0; }
+  .pdf-btn .fsize {
+    font-size: 12px;
+    color: var(--gray);
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.05em;
+  }
+  .pdf-btn:hover .fsize { color: var(--silver); }
+
+  .fine-print {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.9;
+  }
+
+  .divider {
+    width: 48px; height: 1px;
+    background: var(--gold);
+    margin: 44px auto;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-deep);
+    color: #8A94A6;
+    text-align: center;
+    padding: 44px 24px;
+    font-size: 12px;
+    line-height: 2;
+    margin-top: 56px;
+  }
+  footer .footer-brand {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    margin-bottom: 16px;
+  }
+
+  /* ===== FADE-IN ===== */
+  .fade {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .fade.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ===== PC ===== */
+  @media (min-width: 768px) {
+    body { font-size: 17px; }
+    .hero { padding: 120px 24px 100px; }
+    section { padding: 56px 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-brand en">CRYPTO&nbsp;NOVA</div>
+  <div class="hero-rule"></div>
+  <h1>ご検討中の方への<br>詳細資料</h1>
+  <div class="hero-sub">— 仕組み・できること・リスクのすべて —</div>
+  <p class="hero-lead">
+    判断材料は、多いほうがいい。<br>
+    良いところだけでなく、限界も含めて、<br>
+    正直にお伝えします。
+  </p>
+  <p class="hero-note">
+    本資料は情報提供を目的としたものであり、投資助言・特定銘柄の売買推奨・利益保証を行うものではありません。<br>
+    暗号資産の取引には価格変動等のリスクがあります。
+  </p>
+</header>
+
+<!-- ============ TOC ============ -->
+<nav class="toc fade">
+  <div class="sec-label en">CONTENTS</div>
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#s01"><span class="toc-num en">01</span>はじめに</a></li>
+    <li><a href="#s02"><span class="toc-num en">02</span>なぜ、こういうツールが必要なのか</a></li>
+    <li><a href="#s03"><span class="toc-num en">03</span>Crypto Novaとは</a></li>
+    <li><a href="#s04"><span class="toc-num en">04</span>仕組みの詳細解説</a></li>
+    <li><a href="#s05"><span class="toc-num en">05</span>開発の背景</a></li>
+    <li><a href="#s06"><span class="toc-num en">06</span>どんな場面で使うものか（4つの活用シーン）</a></li>
+    <li><a href="#s07"><span class="toc-num en">07</span>できること・できないこと</a></li>
+    <li><a href="#s08"><span class="toc-num en">08</span>実際の使い方（3ステップ）と動作環境</a></li>
+    <li><a href="#s09"><span class="toc-num en">09</span>他の情報収集手段との違い</a></li>
+    <li><a href="#s10"><span class="toc-num en">10</span>よくある不安・懸念への回答</a></li>
+    <li><a href="#s11"><span class="toc-num en">11</span>リスクについて、正直にお伝えします</a></li>
+    <li><a href="#s12"><span class="toc-num en">12</span>私たちの姿勢</a></li>
+    <li><a href="#s13"><span class="toc-num en">13</span>運営者情報・ご利用にあたっての注意事項</a></li>
+    <li><a href="#s14"><span class="toc-num en">14</span>次のステップ</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ============ 01 ============ -->
+<section id="s01" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 01</span>はじめに</h2>
+  <p>このたびはCrypto Novaにご興味をお持ちいただき、ありがとうございます。</p>
+  <p>ランディングページでは、Crypto Novaの概要をお伝えしました。この資料は、そこからもう一歩踏み込んで「実際どういう仕組みで、何ができて、何ができないのか」を、できるだけ正確にお伝えするためのものです。</p>
+  <p>判断材料は、多いほうがいいはずです。良いところだけでなく、限界も含めて、正直にお伝えします。この資料を最後まで読んでいただければ、Crypto Novaがご自身に合うツールかどうか、ご自身で判断いただけるはずです。</p>
+</section>
+
+<!-- ============ 02 ============ -->
+<section id="s02" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 02</span>なぜ、こういうツールが必要なのか</h2>
+  <p>暗号資産市場には、現在数百万種類ともいわれる銘柄が存在します。</p>
+  <p>一方で、私たちが日々目にする情報は、ごく一部に偏っています。SNSで話題になっている銘柄、ニュースで取り上げられた銘柄、影響力のある発信者が言及した銘柄。それらは「話題になったから見えている」だけであり、「調べる価値があるから見えている」とは限りません。</p>
+  <p>つまり、情報の入り口が「話題性」に偏っていて、「客観的な事実」からの入り口がほとんど用意されていない、というのが今の状況です。</p>
+  <p>情報の量を増やすことは、この問題を解決しません。むしろ、情報が増えるほど「結局どれを見ればいいのか分からない」という状態が悪化することもあります。</p>
+  <div class="emphasis-box">
+    <p>必要なのは、情報の量ではなく、数百万種類という母数を、客観的な基準で絞り込む「入り口」です。Crypto Novaは、その入り口として作られました。</p>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section id="s03" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 03</span>Crypto Novaとは</h2>
+  <p>Crypto Novaは、暗号資産市場のデータを分析し、可視化するアプリです。</p>
+  <p>繰り返しになりますが、大切なことなのであらためてお伝えします。Crypto Novaは、価格を予測するツールではありません。将来の値上がりを保証するものでも、投資助言を行うものでもありません。あくまで「データの整理」に徹したツールです。</p>
+  <p>「予測」と「Crypto Novaがやっていること」は、似ているようで根本的に違います。予測は「未来に何が起きるか」を当てようとする行為です。Crypto Novaがやっているのは、「過去に起きたことと、今のデータの形が、どれくらい似ているか」を機械的に照合するだけです。ここの違いを理解しておくことが、このツールを正しく使ううえで一番重要なポイントです。</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section id="s04" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 04</span>仕組みの詳細解説</h2>
+  <p>Crypto Novaの中心機能「NEXT BTC」は、次のような手順で動いています。</p>
+
+  <div class="step">
+    <div class="step-num en">1</div>
+    <div class="step-body">
+      <h3>学習</h3>
+      <p>過去に大きく成長した実績のある銘柄（ビットコイン、イーサリアム、バイナンスコイン、リップル、柴犬コイン、ドージコイン）について、価格が時間の経過とともにどう推移したか、その「曲線のかたち」をAIが学習します。ここで学習しているのは「価格そのもの」ではなく、「上昇・停滞・再上昇といった、曲線の起伏のパターン」です。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num en">2</div>
+    <div class="step-body">
+      <h3>照合</h3>
+      <p>現在存在する数百万種類のアルトコインの、現時点までの値動きの曲線を、ステップ1で学習した曲線のパターンと照合します。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num en">3</div>
+    <div class="step-body">
+      <h3>抽出・表示</h3>
+      <p>照合の結果、パターンが似ている銘柄を、類似率が高い順に30個抽出して表示します。「NEXT BTC」ボタンをタップするだけで、この一連の処理が数秒で完了します。</p>
+    </div>
+  </div>
+
+  <h3>「似ている」ことの意味を正確に理解する</h3>
+  <p>ここで、誤解が生まれやすいポイントを、あえて詳しく説明します。</p>
+  <div class="emphasis-box">
+    <p>「過去に成長した銘柄と曲線の形が似ている」ということは、「その銘柄が今後も同じように成長する」ことを意味しません。曲線が似ているというのは、あくまで過去から現在までのデータにおける統計的な類似性の話であり、未来の値動きを決定づける要因ではありません。</p>
+  </div>
+  <p>市場には、曲線の形以外にも無数の要因（プロジェクトの技術力、開発チームの実績、市場全体の資金の流れ、規制動向など）が影響します。Crypto Novaは、そのうちの「曲線の形」という一つの切り口だけを扱っています。</p>
+
+  <h3>警告マークについて</h3>
+  <p>抽出された30銘柄のうち、注意が必要と判断された銘柄には、警告マークが表示されます。タップすると、その理由の解説を読むことができます。「良さそうな銘柄だけを見せる」設計ではなく、「注意点も含めてフラットに見せる」ことを重視しています。</p>
+  <p>Crypto Novaがやっているのは、人の手では不可能な「数百万種類からの絞り込み作業」を機械に任せることだけです。絞り込んだ後、その銘柄について調べる・考える・判断するのは、あくまでご自身の役割です。</p>
+</section>
+
+<!-- ============ 05 ============ -->
+<section id="s05" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 05</span>開発の背景</h2>
+  <p>2009年、ビットコインはまだごく一部の技術者にしか知られていない存在でした。その後の歴史は、多くの方がご存知の通りです。</p>
+  <p>私たちは、当時を振り返って「あの時に気づけていたら」と考えることがあります。ただし、過去に起きたことが、これからも同じように起きる保証はどこにもありません。歴史は同じ形を繰り返すわけではなく、教訓として参考にできるだけです。</p>
+  <p>一方で、確かなことがあります。数百万種類ともいわれるアルトコインの中には、実際に大きく値を伸ばした銘柄が存在してきました。そして、それらの多くは、話題になる前は無名の存在でした。</p>
+  <p>問題は、その候補を見つける手段を、ほとんどの人が持っていないことです。世界でアルトコインを購入したことがある人は、ごく一部に限られるといわれています。理由は単純で、情報が複雑すぎて、何から手をつけていいか分からないからです。</p>
+  <p>私たちは、この「絞り込みの手段を持たない」という壁を、少しでも下げたいと考えました。次にどの銘柄が伸びるかを言い当てるためではなく、「調べる価値がありそうな候補」を、客観的なデータに基づいて示すために、Crypto Novaを作りました。</p>
+  <div class="emphasis-box">
+    <p>道具は、あくまで道具です。使うかどうか、どう使うかは、手にした方次第です。私たちにできるのは、その入り口を、誠実に整えることだけです。</p>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section id="s06" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 06</span>どんな場面で使うものか<br>（4つの活用シーン）</h2>
+
+  <h3>シーン1：情報収集の起点として</h3>
+  <p>ニュースやSNSで断片的な情報を追いかける前に、まず「どの銘柄が、過去の成長パターンと似ているか」を俯瞰する。そこから、気になった銘柄について自分で詳しく調べていく、という使い方です。話題性からではなく、データからスタートする情報収集ができます。</p>
+
+  <h3>シーン2：判断材料の一つとして</h3>
+  <p>Crypto Novaが示すのは「似ている」という事実だけです。これ単体で購入を決めるのではなく、実際に調べる・購入するかどうかを判断する材料の一つとして、ニュース・公式情報・プロジェクトの実態など、他の情報と合わせてご活用いただくものです。</p>
+
+  <h3>シーン3：日々のチェック習慣として</h3>
+  <p>分析データは随時更新されます。日々の値動きに一喜一憂するのではなく、定点観測のような形で、市場全体の傾向を眺める習慣づくりにも向いています。</p>
+
+  <h3>シーン4：調べる対象の絞り込みとして</h3>
+  <p>数百万種類から、自力で「調べる価値がありそうな銘柄」を見つけ出すのは、現実的に不可能です。Crypto Novaは、その最初の絞り込み作業だけを担当します。そこから先の深掘りは、ご自身のペースで進めていただく形です。</p>
+</section>
+
+<!-- ============ 07 ============ -->
+<section id="s07" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 07</span>できること・できないこと</h2>
+  <p>正しくご判断いただくために、できないことを先にお伝えします。</p>
+
+  <div class="gold-box">
+    <div class="gold-box-title">Crypto Novaに、できないこと</div>
+    <ul class="styled">
+      <li>将来の価格を保証すること</li>
+      <li>利益をお約束すること</li>
+      <li>ご自身に代わって売買を行うこと</li>
+      <li>個別銘柄の購入をおすすめすること、投資助言を行うこと</li>
+      <li>「これを買えば儲かる」という答えを出すこと</li>
+    </ul>
+  </div>
+
+  <div class="gold-box">
+    <div class="gold-box-title">Crypto Novaに、できること</div>
+    <ul class="styled">
+      <li>数百万種類のアルトコインから、成長曲線の類似率順に30銘柄を絞り込んで表示すること</li>
+      <li>注意が必要な銘柄に警告マークを表示し、理由を解説すること</li>
+      <li>専門用語に頼らない画面設計で、初めての方でも見て分かるようにしていること</li>
+      <li>分析データを随時更新し続けること</li>
+    </ul>
+  </div>
+
+  <p>できないことを先に書くのは、正しく知ったうえで、選んでいただきたいからです。「なんでもできる魔法のツール」としてご案内するつもりはありません。</p>
+</section>
+
+<!-- ============ 08 ============ -->
+<section id="s08" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 08</span>実際の使い方（3ステップ）と動作環境</h2>
+
+  <div class="step">
+    <div class="step-num en">1</div>
+    <div class="step-body">
+      <h3>インストール</h3>
+      <p>ライセンス購入後にお届けするマニュアルに沿って、お使いの端末にインストールします。専門知識は不要です。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num en">2</div>
+    <div class="step-body">
+      <h3>画面を見る</h3>
+      <p>「NEXT BTC」ボタンをタップします。数秒で、分析結果が整理された形で表示されます。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num en">3</div>
+    <div class="step-body">
+      <h3>自分で判断する</h3>
+      <p>表示は参考情報です。気になった銘柄があれば、ご自身で調べ、考え、判断してください。Crypto Novaは、その最初の一歩を助けるための道具です。</p>
+    </div>
+  </div>
+
+  <div class="emphasis-box">
+    <p><strong>対応端末</strong><br>Windows（10/11・64bit）／ iPhone（iOS 12.0以上）／ Android（8.0以上）</p>
+    <p class="fine-print">※ライセンスは端末ごとの提供です（PC版・iPhone版・Android版）。<br>※ご利用にはインターネット接続が必要です。</p>
+  </div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section id="s09" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 09</span>他の情報収集手段との違い</h2>
+  <p>ここまでの説明で、「これはSNSや他の情報サイトと何が違うのか」という疑問をお持ちの方もいらっしゃると思いますので、整理します。</p>
+
+  <h3>SNS・インフルエンサーの発信との違い</h3>
+  <p>SNSの情報は、発信者の主観や、その時々の話題性に左右されます。同じ銘柄でも、発信者によって評価が正反対になることも珍しくありません。Crypto Novaは、発信者の意見ではなく、過去の値動きデータという客観的な事実の照合結果を示します。主観と客観、どちらが優れているというより、性質が違うものとご理解ください。</p>
+
+  <h3>ニュースサイトとの違い</h3>
+  <p>ニュースサイトは「すでに話題になった銘柄」を扱うことがほとんどです。話題になった時点で、多くの人がすでにその情報を知っている状態になっています。Crypto Novaは、話題性に関係なく、曲線の類似性という基準で機械的に抽出するため、まだあまり話題になっていない銘柄が候補に挙がることもあります。</p>
+
+  <h3>他の分析ツールとの違い</h3>
+  <p>テクニカル分析ツールの多くは、個別銘柄を一つずつチャート分析する前提で作られています。Crypto Novaは、数百万種類という母数から「まず何を見るべきか」を絞り込む、入り口の部分に特化しています。深く分析するツールと、広く絞り込むツールは、役割が異なります。</p>
+</section>
+
+<!-- ============ 10 ============ -->
+<section id="s10" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 10</span>よくある不安・懸念への回答</h2>
+
+  <div class="qa">
+    <div class="qa-q">この資料まで読んで、まだ迷っています。何を基準に決めればいいですか？</div>
+    <div class="qa-a"><p>一番大切な基準は、「相場を人任せにせず、自分の目で見て判断したいと思うかどうか」です。Crypto Novaは、その判断を代行するツールではなく、判断のための材料整理を助けるツールです。この立ち位置に納得いただけるかどうかが、判断の分かれ目になると思います。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">初心者でも使いこなせますか？</div>
+    <div class="qa-a"><p>画面自体は専門用語を使わない設計にしています。ただし、暗号資産そのものの基礎知識（何が値動きに影響するか、取引所の使い方など）は、別途ご自身での理解が必要です。Crypto Novaは「調べる対象を絞る」ためのツールであり、暗号資産の入門教材ではありません。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">表示された銘柄を、そのまま購入すればいいのですか？</div>
+    <div class="qa-a"><p>いいえ。表示されるのは「調べる候補」です。ご自身で情報を確認し、納得したうえでご判断ください。Crypto Novaの表示だけを根拠に売買することは推奨していません。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">「似ている」というだけで、本当に意味があるのですか？</div>
+    <div class="qa-a"><p>曲線が似ていることが、値上がりを保証するわけではありません。ただし、数百万種類の中から「調べる価値がありそうな候補」を、客観的な基準で絞り込めること自体に価値があると考えています。何も基準がない状態で数百万種類から探すのと、30個まで絞り込まれた状態から探すのとでは、かかる時間も労力もまったく違います。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">どのくらいの頻度で使うものですか？</div>
+    <div class="qa-a"><p>決まった頻度はありません。毎日チェックする方もいれば、週に一度、定点観測のように使う方もいます。ご自身のペースでご利用いただけます。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">表示される銘柄は、毎回同じですか？</div>
+    <div class="qa-a"><p>分析データは随時更新されるため、表示される銘柄やランキングは変動します。市場の状況に応じて、候補は変わっていきます。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">他の人はどんな使い方をしていますか？</div>
+    <div class="qa-a"><p>情報収集の起点として使う方、定点観測として習慣的に使う方など、使い方は人それぞれです。共通しているのは、「Crypto Novaの表示だけで判断を完結させず、そこから自分で調べる」というスタンスです。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">サポート体制はありますか？</div>
+    <div class="qa-a"><p>お問い合わせ窓口（0120-507-986／受付 10:00〜16:00 月〜土）にてご案内しています。ご利用開始後の操作面のご質問などにお答えします。</p></div>
+  </div>
+
+  <div class="qa">
+    <div class="qa-q">契約後、使い方が分からなくなったらどうすればいいですか？</div>
+    <div class="qa-a"><p>ライセンス購入後にマニュアルをお届けしますので、そちらをご確認ください。それでも分からない点があれば、上記窓口までお気軽にお問い合わせください。</p></div>
+  </div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section id="s11" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 11</span>リスクについて、正直にお伝えします</h2>
+  <p>暗号資産への投資には、価格変動のリスクが伴います。これはCrypto Novaを使っても変わりません。Crypto Novaは、リスクをなくすツールではなく、判断のための材料を整理するツールです。</p>
+  <p>以下の点を、あらためて明確にお伝えします。</p>
+
+  <div class="risk-section">
+    <h3>ご確認いただきたいこと</h3>
+    <ul class="styled">
+      <li>Crypto Novaの分析結果は、将来の値動きを保証するものではありません。</li>
+      <li>「類似率が高い＝値上がりする」という単純な関係ではありません。</li>
+      <li>本アプリの利用により損失が生じた場合でも、当社がこれを補填することはありません。</li>
+      <li>本アプリは投資助言・代理業、投資運用業のサービスではありません。</li>
+      <li>投資は、生活に影響のない余裕資金の範囲で行ってください。</li>
+    </ul>
+  </div>
+
+  <p>こうしたリスクを正直にお伝えするのは、期待値を過大に見せて後で失望させるようなことをしたくないからです。正確な理解のうえでご検討いただくことが、私たちにとっても、ご利用者にとっても、一番良い結果につながると考えています。</p>
+</section>
+
+<!-- ============ 12 ============ -->
+<section id="s12" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 12</span>私たちの姿勢</h2>
+  <p>私たちが約束できるのは、未来の価格ではありません。</p>
+  <div class="emphasis-box">
+    <p>約束できるのは、データの更新を続けること。<br>注意が必要な銘柄には、注意と書くこと。<br>できないことを、できると言わないこと。</p>
+  </div>
+  <p>この資料も、その姿勢に沿って作りました。良いところだけを並べるのではなく、限界も含めてお伝えすることが、結果的に長くお付き合いいただける関係につながると考えています。</p>
+</section>
+
+<!-- ============ 13 ============ -->
+<section id="s13" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 13</span>運営者情報・ご利用にあたっての注意事項</h2>
+
+  <h3>運営者情報</h3>
+  <p>運営：株式会社S・T・I<br>お問い合わせ：0120-507-986（受付 10:00〜16:00 月〜土）</p>
+
+  <h3>ご利用にあたっての注意事項</h3>
+  <ul class="styled fine-print">
+    <li>暗号資産の価格は大きく変動します。本アプリの分析結果は、将来の値動きを保証するものではありません。</li>
+    <li>本アプリの利用により損失が生じた場合でも、当社がこれを補填することはありません。</li>
+    <li>本アプリは投資助言・代理業、投資運用業のサービスではありません。</li>
+    <li>投資は、生活に影響のない余裕資金の範囲で行ってください。</li>
+  </ul>
+  <p class="fine-print">特定商取引法に基づく表記［リンク］／プライバシーポリシー［リンク］</p>
+</section>
+
+<!-- ============ 14 ============ -->
+<section id="s14" class="fade">
+  <h2 class="sec-title"><span class="sec-label en">SECTION 14</span>次のステップ</h2>
+  <p>ここまでお読みいただき、ありがとうございました。</p>
+  <p>Crypto Novaの仕組みや姿勢について、ご理解いただけましたら、対応端末・お申し込み方法などの詳細は、下記のページでご案内しています。</p>
+
+  <div class="pdf-box">
+    <span class="en">DOCUMENT</span>
+    <h3>この資料をPDFで保存する</h3>
+    <p>本ページの内容を、そのままPDFでお手元に保存いただけます。<br>あとでゆっくり読み返したい方はこちらから。</p>
+    <a class="pdf-btn" href="CryptoNova_shiryo_V2.pdf" download>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <span>資料をダウンロード（PDF）</span>
+      <span class="fsize">A4 / 13P</span>
+    </a>
+  </div>
+
+  <div class="cta-final">
+    <p class="cta-lead">料金・端末別ライセンス・お支払い方法は、<br>次のページにすべて記載しています。</p>
+    <a class="cta-btn" href="https://m.cryptonova.jp/p/campaign/ZR53LrGO/AYyrQuDU">詳細を見る・お申し込みはこちら</a>
+    <p class="cta-note">ご不明点があれば、お気軽にお問い合わせください。</p>
+  </div>
+
+  <div class="divider"></div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-brand en">CRYPTO&nbsp;NOVA</div>
+  <p>
+    本コンテンツおよびCrypto Novaは、暗号資産市場に関する情報提供を目的としたものです。<br>
+    投資助言、特定銘柄の売買推奨、利益保証を行うものではありません。<br>
+    暗号資産には価格変動リスクがあります。投資判断はご自身の責任で行ってください。<br><br>
+    運営：株式会社S・T・I
+  </p>
+</footer>
+
+<script>
+  // scroll fade-in
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
