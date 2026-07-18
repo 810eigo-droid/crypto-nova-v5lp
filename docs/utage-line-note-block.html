@@ -1,0 +1,28 @@
+<!--
+  UTAGEのLINE誘導ページ用｜HTMLブロック
+  「LINEに登録して、ゆっくり考える」ボタンの下に貼る、登録後押しの安心ブロック。
+  自己完結（inline <style> 同梱・外部CSS不要）。UTAGEのHTMLブロックにそのまま貼り付け。
+-->
+<div class="cn-linenote">
+  <p class="cn-linenote-lead">すぐに決めなくて、大丈夫です。</p>
+  <p class="cn-linenote-sub">まずは情報を受け取りながら、ご自身のペースでご検討ください。</p>
+  <ul class="cn-linenote-list">
+    <li><span>✓</span>ご登録は<b>無料</b>。費用は一切かかりません。</li>
+    <li><span>✓</span>しつこい勧誘や、過剰な通知はしません。</li>
+    <li><span>✓</span><b>いつでもブロック・解除</b>ができます。</li>
+    <li><span>✓</span>注意が必要な銘柄のお知らせなど、<b>判断に役立つ情報</b>をお届けします。</li>
+  </ul>
+  <p class="cn-linenote-note">※LINEでの配信は情報提供を目的としたものであり、利益を保証するものではありません。暗号資産の取引には価格変動等のリスクがあります。</p>
+</div>
+<style>
+  .cn-linenote{max-width:560px;margin:18px auto 0;padding:24px 22px;background:#ffffff;border:1px solid #E4E9F0;border-radius:16px;box-shadow:0 8px 24px -14px rgba(20,40,70,.18);font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;color:#1E2B3B;text-align:center;box-sizing:border-box;}
+  .cn-linenote-lead{margin:0 0 4px;font-size:17px;font-weight:700;letter-spacing:.02em;}
+  .cn-linenote-sub{margin:0 0 18px;font-size:13px;color:#5A6B80;line-height:1.9;}
+  .cn-linenote-list{list-style:none;margin:0 0 16px;padding:0;text-align:left;}
+  .cn-linenote-list li{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px dashed #E4E9F0;font-size:14px;line-height:1.8;color:#2C3A4C;}
+  .cn-linenote-list li:first-child{border-top:0;}
+  .cn-linenote-list li span{flex:0 0 22px;width:22px;height:22px;margin-top:2px;display:grid;place-items:center;border-radius:50%;background:#06C755;color:#fff;font-size:12px;font-weight:700;}
+  .cn-linenote-list b{font-weight:700;color:#14304D;}
+  .cn-linenote-note{margin:0;font-size:11px;color:#8A97A8;line-height:1.8;}
+  @media(max-width:480px){.cn-linenote{padding:20px 16px;}.cn-linenote-lead{font-size:16px;}}
+</style>
