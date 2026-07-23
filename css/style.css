@@ -1264,3 +1264,34 @@ strong{ color:var(--blue-deep); font-weight:700; }
 }
 .sticky-cta a span{ font-size:11px; }
 @media (max-width:760px){ .sticky-cta{ display:block; } }
+
+/* 最終CTA内の特典ミニ表記（index） */
+.cta-tokuten-mini{
+  margin-top:22px;
+  background:linear-gradient(120deg, var(--gold-pale), #FFF9EA);
+  border:1.5px solid rgba(229,185,78,.5);
+  border-radius:14px;
+  padding:16px 20px 14px;
+  text-align:left;
+  display:inline-block;
+}
+.ctm-head{
+  font-size:12px; font-weight:900; letter-spacing:.08em; color:#8A6410;
+  margin-bottom:6px;
+}
+.cta-tokuten-mini ul{ margin:0; padding:0; list-style:none; }
+.cta-tokuten-mini li{
+  font-size:13px; font-weight:700; color:var(--ink);
+  padding-left:18px; position:relative; line-height:2;
+}
+.cta-tokuten-mini li::before{
+  content:"🎁"; position:absolute; left:0; top:0; font-size:11px;
+}
+@media (max-width:900px){ .cta-tokuten-mini{ display:block; text-align:left; } }
+
+/* FVのCTA下：特典名の小さな表記（index2/3） */
+.fv-cta-names{
+  margin-top:6px;
+  font-size:11px; font-weight:700; color:var(--ink-dim); letter-spacing:.02em;
+  line-height:1.9;
+}
