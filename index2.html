@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crypto Nova（クリプトノヴァ）｜暗号資産のデータ分析アプリ — 相場を、自分の目で読めるようになる。</title>
+<meta name="description" content="Crypto Nova（クリプトノヴァ）は暗号資産市場のデータ分析を可視化するアプリ。数百万種類のアルトコインから、過去の成長曲線と似た銘柄を類似率順に30個表示します。運営：株式会社S・T・I。利益を保証するものではありません。">
+<meta name="robots" content="noindex">
+
+<!-- OGP（SNS・検索結果でのシェア表示用） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Crypto Nova（クリプトノヴァ）">
+<meta property="og:title" content="Crypto Nova（クリプトノヴァ）｜暗号資産のデータ分析アプリ">
+<meta property="og:description" content="数百万種類のアルトコインから、過去の成長曲線と似た銘柄を類似率順に30銘柄表示。相場を、自分の目で読めるようになる。">
+<meta property="og:url" content="https://cryptonova.jp/sn/">
+<meta property="og:image" content="https://cryptonova.jp/sn/images/cta-app.webp">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- 構造化データ（検索エンジン向けのアプリ情報） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Crypto Nova",
+  "alternateName": ["クリプトノヴァ", "クリプト・ノヴァ"],
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Windows 10/11, iOS 12.0以上, Android 8.0以上",
+  "description": "暗号資産市場のデータ分析を可視化するアプリ。数百万種類のアルトコインから、過去の成長曲線と似た銘柄を類似率順に30銘柄表示します。利益を保証するものではありません。",
+  "publisher": {
+    "@type": "Organization",
+    "name": "株式会社S・T・I"
+  }
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B6FD0'/%3E%3Cpath d='M16 5l2.4 8.6L27 16l-8.6 2.4L16 27l-2.4-8.6L5 16l8.6-2.4z' fill='%23FFE9A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ページ上部：スクロール進捗バー -->
+<div class="progress-bar" aria-hidden="true"><i></i></div>
+
+<!-- 固定ナビ -->
+<nav class="topnav" aria-label="ページ内ナビゲーション">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true">✦</span>
+    <span class="brand-name">Crypto <b>Nova</b></span>
+  </a>
+  <div class="nav-links">
+    <a href="#mechanism">仕組み</a>
+    <a href="#demo">画面</a>
+    <a href="#honest">できること</a>
+    <a href="#howto">使い方</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a class="nav-cta" href="https://utage-system.com/p/JpcmqXh0SH2F">資料ダウンロード</a>
+</nav>
+
+<main id="top">
+
+<!-- =================================================== -->
+<!-- S1 / ファーストビュー                                  -->
+<!-- =================================================== -->
+<section class="fv" id="fv">
+  <div class="fv-orb orb-1" aria-hidden="true"></div>
+  <div class="fv-orb orb-2" aria-hidden="true"></div>
+
+  <!-- 浮遊コイン（CSS描画・画像不要／PCのみ表示） -->
+  <div class="fv-coins" aria-hidden="true">
+    <span class="coin c1">₿</span>
+    <span class="coin c2">Ξ</span>
+    <span class="coin c3">₿</span>
+    <span class="coin c4">¥</span>
+    <span class="coin c5">₿</span>
+  </div>
+
+  <!-- スマホ専用フルFV画像（PCでは非表示／読込失敗時は枠ごと非表示） -->
+  <figure class="fv-sp">
+    <img src="images/fv-sp.webp" width="887" height="1774"
+      onerror="this.closest('.fv-sp').style.display='none'"
+      alt="Crypto Nova｜相場を、自分の目で読めるようになる。ビットコインなどの成長曲線をAIが学習し、数百万のアルトコインから似た曲線の銘柄を類似率が高い順に30銘柄、自動で表示します。">
+  </figure>
+
+  <div class="fv-cta-sp">
+    <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+    <p class="fv-cta-tokuten">お受け取りの方に、LINEで<b>2つの特典</b>をご用意しています。</p>
+  </div>
+
+  <div class="container fv-grid">
+    <div class="fv-copy">
+      <p class="fv-ribbon reveal"><span class="ribbon-star">✦</span><b class="rb-strong">暗号資産の分析アプリ</b><span class="ribbon-div">|</span><b>Crypto&nbsp;Nova</b></p>
+
+      <h1 class="fv-title reveal d1">
+        相場を、<br>
+        <span class="mk">自分の目で読める</span><br>
+        ようになる。
+      </h1>
+
+      <p class="fv-explain reveal d2">
+        <b>ビットコイン</b>などの<b>成長曲線</b>をAIが学習。<br class="pc">
+        <b>数百万のアルトコイン</b>から、似た曲線を描く銘柄を
+        <strong class="hl">類似率が高い順に30銘柄</strong>、自動で<b>表示</b>します。
+      </p>
+
+      <ul class="fv-feats reveal d3">
+        <li><i></i><b>数百万 → 30銘柄</b>に絞り込み</li>
+        <li><i></i>類似率で<b>順位づけ</b></li>
+        <li><i></i>注意銘柄に<b>警告マーク</b></li>
+      </ul>
+
+      <div class="fv-cta reveal d4">
+        <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+        <p class="fv-cta-tokuten">お受け取りの方に、LINEで<b>2つの特典</b>をご用意しています。</p>
+      </div>
+    </div>
+
+    <div class="fv-visual reveal d2">
+      <div class="app-demo">
+        <div class="app-demo-bar">
+          <span class="ad-dot"></span><span class="ad-dot"></span><span class="ad-dot"></span>
+          <span class="ad-name">Crypto Nova</span>
+        </div>
+        <div class="app-demo-screen">
+          <p class="ad-cap">ビットコインの成長曲線に<b>似た銘柄</b>を探す</p>
+          <div class="ad-chart">
+            <canvas id="hero-chart"></canvas>
+            <span class="ad-sim">類似率&nbsp;<b id="hero-sim">0.0</b>%</span>
+          </div>
+          <div class="ad-next" aria-hidden="true"><span class="ad-next-pulse"></span>NEXT&nbsp;BTC</div>
+          <p class="ad-reslabel">似た曲線の銘柄（類似率順）</p>
+          <ul class="ad-results" id="hero-results" aria-hidden="true"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- キャラクター＋信頼バッジ＋注意書きの地面ゾーン -->
+  <div class="container fv-foot reveal d4">
+    <div class="fv-char-wrap">
+      <span class="char-bubble">そもそも、<br>どれを調べればいい？</span>
+      <figure class="ph fv-char char-l" data-src="char-left.webp" data-size="520×760・透過" style="aspect-ratio:52/76"></figure>
+    </div>
+
+    <div class="fv-trust">
+      <ul class="trust-list">
+        <li>
+          <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M6 18h6M9 14v4"/><rect x="17" y="8" width="5" height="10" rx="1.2"/></svg></i>
+          <b>3つの端末に対応</b>
+          <span>Windows / iPhone / Android</span>
+        </li>
+        <li>
+          <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 3v4h-4"/></svg></i>
+          <b>分析データの随時更新</b>
+          <span>市場データの分析・情報提供</span>
+        </li>
+        <li>
+          <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i>
+          <b>売買機能なし</b>
+          <span>資産をお預かりすることもありません</span>
+        </li>
+      </ul>
+      <div class="fv-disclaimer">
+        <p>※本アプリは市場データの分析・情報提供を行うものであり、利益を保証するものではありません。</p>
+        <p>※暗号資産の取引には価格変動等のリスクがあります。</p>
+      </div>
+    </div>
+
+    <div class="fv-char-wrap">
+      <span class="char-bubble">絞り込みはAIに任せて、<br>決めるのは自分。</span>
+      <figure class="ph fv-char char-r" data-src="char-right.webp" data-size="520×760・透過" style="aspect-ratio:52/76"></figure>
+    </div>
+  </div>
+
+  <div class="fv-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C360,95 1080,0 1440,45 L1440,90 L0,90 Z" fill="#FFFFFF"/></svg>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S2 / 問題定義                                          -->
+<!-- =================================================== -->
+<section class="problem section bg-white" id="problem">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-badge">THE PROBLEM</p>
+      <h2 class="sec-title">「調べる」と「決める」のあいだには、<br class="pc"><span class="mk">壁</span>があります。</h2>
+    </header>
+
+    <!-- 情報ノイズのチップ -->
+    <div class="noise-chips reveal" aria-hidden="true">
+      <span>価格急騰！</span><span>#次の100倍</span><span>専門家A「上がる」</span><span>専門家B「下がる」</span><span>新規上場</span><span>SNSで話題</span><span>急落警報</span><span>結局どれ？</span>
+    </div>
+
+    <div class="problem-body">
+      <div class="problem-visual reveal">
+        <figure class="ph" data-src="problem-flood.webp" data-size="900×675" data-alt="情報の洪水に困っている人のイラスト" style="aspect-ratio:4/3"></figure>
+      </div>
+
+      <div class="problem-text reveal">
+        <p>価格のニュース、SNSの意見、専門家の解説。<br>
+        情報は毎日増えていくのに、なぜか判断には近づかない。</p>
+
+        <p>理由はシンプルです。<br>
+        数百万種類ともいわれるアルトコインの海から、<br class="pc">
+        <strong>「そもそもどれを調べるか」を絞り込む手段</strong>を、<br class="pc">
+        ほとんどの人が持っていないからです。</p>
+      </div>
+    </div>
+
+    <div class="problem-conclusion reveal">
+      <p class="conclusion-line">情報の<b>量</b>ではなく、<b>整理の道具</b>。</p>
+      <p class="conclusion-brand">Crypto Novaは、そこから作られました。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S3 / 仕組み                                            -->
+<!-- =================================================== -->
+<section class="mechanism section bg-blue" id="mechanism">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-badge">Crypto Novaの仕組み</p>
+      <h2 class="sec-title">やっていることは、<span class="mk">ひとつ</span>です。</h2>
+    </header>
+
+    <div class="mech-flow">
+      <!-- STEP01 学習ソース -->
+      <div class="mech-source card reveal">
+        <div class="stage-tag"><span>STEP</span><b>01</b><em>学習</em></div>
+        <p class="mech-caption">AIが学習した成長曲線（時系列のチャートデータ）</p>
+        <ul class="coin-chips">
+          <li><span class="coin-ic">₿</span><svg class="spark" data-seed="1" viewBox="0 0 64 24"></svg><b>BTC</b><span>ビットコイン</span></li>
+          <li><span class="coin-ic">Ξ</span><svg class="spark" data-seed="2" viewBox="0 0 64 24"></svg><b>ETH</b><span>イーサリアム</span></li>
+          <li><span class="coin-ic">B</span><svg class="spark" data-seed="3" viewBox="0 0 64 24"></svg><b>BNB</b><span>バイナンスコイン</span></li>
+          <li><span class="coin-ic">X</span><svg class="spark" data-seed="4" viewBox="0 0 64 24"></svg><b>XRP</b><span>リップル</span></li>
+          <li><span class="coin-ic">S</span><svg class="spark" data-seed="5" viewBox="0 0 64 24"></svg><b>SHIB</b><span>柴犬コイン</span></li>
+          <li><span class="coin-ic">D</span><svg class="spark" data-seed="6" viewBox="0 0 64 24"></svg><b>DOGE</b><span>ドージコイン</span></li>
+        </ul>
+      </div>
+
+      <!-- STEP02 AIコア → ボタン -->
+      <div class="mech-button reveal">
+        <div class="stage-tag mid"><span>STEP</span><b>02</b><em>照合</em></div>
+        <div class="ai-core" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+          <span class="ai-face">AI</span>
+        </div>
+        <p class="ai-note">曲線の「かたち」を照合</p>
+        <div class="nextbtc-btn" role="img" aria-label="NEXT BTCボタンのイメージ">
+          <span class="nextbtc-pulse"></span>
+          <span class="nextbtc-face">NEXT&nbsp;BTC</span>
+        </div>
+        <p class="mech-tap">ボタンをタップすると——</p>
+      </div>
+
+      <!-- STEP03 結果（アプリ風ダークパネル） -->
+      <div class="mech-result reveal">
+        <div class="rp-bar">
+          <span class="rp-dot"></span><span class="rp-dot"></span><span class="rp-dot"></span>
+          <span class="rp-title">Crypto Nova — 分析結果</span>
+          <span class="stage-tag dark"><span>STEP</span><b>03</b><em>抽出</em></span>
+        </div>
+        <div class="rp-body">
+          <div class="rp-stat" aria-hidden="true">
+            <span class="rp-from">数百万銘柄</span>
+            <span class="rp-arrow">→</span>
+            <span class="rp-to"><b>30</b><small>銘柄</small></span>
+          </div>
+          <p class="rp-caption">似た成長曲線を描いているアルトコインを、類似率が高い順に<b>30</b>個表示</p>
+          <div class="rp-top3" id="result-top3" aria-hidden="true"></div>
+          <div class="rp-grid" id="result-grid" aria-hidden="true"></div>
+          <p class="img-note dark">※画面はイメージです。実際の表示・数値・銘柄とは異なります。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- アプリ画面イメージ -->
+    <header class="screens-head reveal">
+      <p class="screens-title">実際のアプリでは、こう見えます</p>
+      <p class="screens-lead">NEXT BTCボタンを押してから、注意が必要な銘柄の確認まで。<br class="pc">使うときの流れに沿って、3つの画面をご紹介します。</p>
+    </header>
+    <div class="mech-screens">
+      <figure class="mech-screen reveal">
+        <figure class="ph" data-src="app-ui-next.webp" data-size="1280×800" data-alt="NEXT BTCボタンの画面イメージ" style="aspect-ratio:16/10"></figure>
+        <figcaption><b>①</b>NEXT BTCボタンを押す</figcaption>
+      </figure>
+      <figure class="mech-screen reveal">
+        <figure class="ph" data-src="app-ui-list.webp" data-size="1280×800" data-alt="類似率順に30銘柄が並ぶ画面イメージ" style="aspect-ratio:16/10"></figure>
+        <figcaption><b>②</b>類似率順に30銘柄が並ぶ</figcaption>
+      </figure>
+      <figure class="mech-screen reveal">
+        <figure class="ph" data-src="app-ui-warning.webp" data-size="1280×800" data-alt="警告マークと理由の解説画面イメージ" style="aspect-ratio:16/10"></figure>
+        <figcaption><b>③</b>警告マークと理由を確認する</figcaption>
+      </figure>
+    </div>
+    <p class="img-note reveal">※画面はイメージです。</p>
+
+    <!-- 予言ではない、の宣言 -->
+    <div class="mech-honest card-gold reveal">
+      <h3><span class="honest-icon" aria-hidden="true">！</span>大切なのは、これが「予言」ではないことです。</h3>
+      <p>過去に大きく成長した銘柄と<strong>「曲線のかたちが似ている」という事実</strong>を示すだけで、同じように成長することを保証するものではありません。</p>
+      <p>似ているものを探す作業を、人の手で数百万種類からやるのは不可能です。<br class="pc">
+      その<strong>絞り込みだけ</strong>を、機械に任せる。<br class="pc">
+      そこから先の<strong>「調べる・考える・決める」は、あなたの仕事</strong>です。</p>
+    </div>
+
+    <div class="cta-strip reveal">
+      <p class="strip-lead">仕組みの詳細は、無料の資料（全14章）にまとめています。</p>
+      <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+      <p class="strip-note">お受け取りの方に、LINEで2つの特典をご用意しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S4 / 実際の画面（デモ動画）                              -->
+<!-- =================================================== -->
+<section class="demo section bg-white" id="demo">
+  <div class="container">
+    <header class="sec-head center reveal">
+      <p class="sec-badge">実際の画面</p>
+      <h2 class="sec-title">画面を、<span class="mk">そのまま</span>お見せします。</h2>
+    </header>
+
+    <div class="video-frame vertical reveal">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/cJ0Z7dCtuyY?rel=0&playsinline=1"
+        title="「見て→買う」シンプル投資 — Crypto Nova デモ動画"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video-fallback reveal">
+      うまく再生されない場合は
+      <a href="https://youtube.com/shorts/cJ0Z7dCtuyY" target="_blank" rel="noopener">YouTubeでこの動画を見る</a>
+    </p>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S5 / できること・できないこと                            -->
+<!-- =================================================== -->
+<section class="honest section bg-blue" id="honest">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-badge">できること／できないこと</p>
+      <h2 class="sec-title">先に、<span class="mk">できないこと</span>からお伝えします。</h2>
+    </header>
+
+    <div class="honest-grid">
+      <div class="honest-card cannot reveal">
+        <h3><span class="card-tag">CANNOT</span>Crypto Novaに<b>できないこと</b></h3>
+        <ul>
+          <li><span class="li-mark no">×</span>将来の価格を保証すること</li>
+          <li><span class="li-mark no">×</span>利益をお約束すること</li>
+          <li><span class="li-mark no">×</span>あなたの代わりに売買すること</li>
+          <li><span class="li-mark no">×</span>個別の投資助言を行うこと</li>
+        </ul>
+      </div>
+
+      <div class="honest-card can reveal">
+        <h3><span class="card-tag">CAN</span>Crypto Novaに<b>できること</b></h3>
+        <ul>
+          <li><span class="li-mark yes">✓</span>数百万種類のアルトコインからの絞り込み（成長曲線の類似率順に30銘柄を表示）</li>
+          <li><span class="li-mark yes">✓</span>注意が必要な銘柄への警告マーク表示と、その理由の解説</li>
+          <li><span class="li-mark yes">✓</span>専門用語を使わない、見て分かる画面設計</li>
+          <li><span class="li-mark yes">✓</span>分析データの随時更新</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="honest-why reveal">
+      できないことを先に書くのは、<br>
+      <strong class="mk">正しく知ったうえで、選んでいただきたいから</strong>です。
+    </p>
+
+    <div class="cta-strip reveal">
+      <p class="strip-lead">できること・できないことの全文は、資料でご確認いただけます。</p>
+      <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+      <p class="strip-note">お受け取りの方に、LINEで2つの特典をご用意しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S6 / 使い方と動作環境                                   -->
+<!-- =================================================== -->
+<section class="howto section bg-white" id="howto">
+  <div class="container">
+    <header class="sec-head reveal">
+      <p class="sec-badge">使い方（3ステップ）と動作環境</p>
+      <h2 class="sec-title">むずかしい設定は、<span class="mk">ありません</span>。</h2>
+    </header>
+
+    <ol class="steps">
+      <li class="step card reveal">
+        <span class="step-num">STEP 01</span>
+        <figure class="ph" data-src="step-install.webp" data-size="720×540" data-alt="インストールのイラスト" style="aspect-ratio:4/3"></figure>
+        <h3>インストール</h3>
+        <p>ライセンス購入後にお届けするマニュアルに沿って、お使いの端末にインストール。</p>
+      </li>
+      <li class="step card reveal">
+        <span class="step-num">STEP 02</span>
+        <figure class="ph" data-src="step-view.webp" data-size="720×540" data-alt="画面を見るイラスト" style="aspect-ratio:4/3"></figure>
+        <h3>画面を見る</h3>
+        <p>NEXT BTCボタンをタップ。分析結果が整理されて表示されます。</p>
+      </li>
+      <li class="step card reveal">
+        <span class="step-num">STEP 03</span>
+        <figure class="ph" data-src="step-decide.webp" data-size="720×540" data-alt="自分で判断するイラスト" style="aspect-ratio:4/3"></figure>
+        <h3>自分で判断する</h3>
+        <p>表示は参考情報です。調べる・考える・決めるのは、あなたです。</p>
+      </li>
+    </ol>
+
+    <div class="env reveal">
+      <p class="env-title">対応端末</p>
+      <figure class="ph env-visual" data-src="devices-lineup.webp" data-size="1400×700" data-alt="Windows・iPhone・Androidの端末イメージ" style="aspect-ratio:2/1"></figure>
+      <ul class="env-badges">
+        <li><b>Windows</b><span>10 / 11・64bit</span></li>
+        <li><b>iPhone</b><span>iOS 12.0以上</span></li>
+        <li><b>Android</b><span>8.0以上</span></li>
+      </ul>
+      <p class="env-note">※ライセンスは端末ごとの提供です（PC版・iPhone版・Android版）。詳細は次のページでご確認ください。<br>※ご利用にはインターネット接続が必要です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S7 / 運営の姿勢                                        -->
+<!-- =================================================== -->
+<section class="stance section bg-blue" id="stance">
+  <div class="container">
+    <header class="sec-head center reveal">
+      <p class="sec-badge">運営の姿勢</p>
+      <h2 class="sec-title">誠実に、<span class="mk">データと向き合う</span>。</h2>
+    </header>
+
+    <div class="stance-grid">
+      <div class="stance-visual reveal">
+        <figure class="ph" data-src="stance-team.webp" data-size="1200×800" data-alt="データと向き合う運営チームのイメージ" style="aspect-ratio:3/2"></figure>
+      </div>
+
+      <div class="stance-body reveal">
+        <p class="stance-intro">私たちが約束できるのは、未来の価格ではありません。</p>
+        <ul class="stance-vows">
+          <li><span class="vow-num">一</span>約束できるのは、<strong>データの更新を続けること</strong>。</li>
+          <li><span class="vow-num">二</span>注意が必要な銘柄には、<strong>注意と書くこと</strong>。</li>
+          <li><span class="vow-num">三</span>できないことを、<strong>できると言わないこと</strong>。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 開発の背景 -->
+    <div class="stance-background reveal">
+      <p class="bg-label">開発の背景</p>
+      <p class="bg-body">Crypto Novaは、情報が多すぎて「何から調べればいいか分からない」という声から生まれました。数百万種類ともいわれるアルトコインの中で、すべてを人の手で追い続けることは現実的ではありません。だからこそ、過去の成長曲線との類似性をもとに、調べる候補を機械的に整理する道具をつくりました。私たちが目指すのは予測ではなく、判断の前に見るべき材料を、静かに届け続けることです。</p>
+    </div>
+
+    <div class="stance-company reveal">
+      <p>運営：株式会社S・T・I</p>
+      <p>お問い合わせ：<a href="tel:0120507986" class="tel">0120-507-986</a>（受付 10:00〜16:00 月〜土）</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S8 / FAQ                                             -->
+<!-- =================================================== -->
+<section class="faq section bg-white" id="faq">
+  <div class="container narrow">
+    <header class="sec-head center reveal">
+      <p class="sec-badge">よくあるご質問（製品について）</p>
+      <h2 class="sec-title">お答えします。<span class="mk">ありのままに</span>。</h2>
+    </header>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary><span class="q">Q</span>このアプリを使えば、儲かりますか？<span class="faq-toggle" aria-hidden="true"></span></summary>
+        <div class="faq-a"><span class="a">A</span><p>いいえ、利益をお約束するものではありません。表示されるのは「過去の成長曲線と似ている」という分析結果であり、投資の成果はご自身の判断と市場の状況によって決まります。</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary><span class="q">Q</span>表示された30銘柄は「買うべき銘柄」ですか？<span class="faq-toggle" aria-hidden="true"></span></summary>
+        <div class="faq-a"><span class="a">A</span><p>いいえ。「調べる候補」です。類似率が高いことは、値上がりの保証ではありません。警告マークの有無も含め、ご自身で調べたうえでご判断ください。</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary><span class="q">Q</span>予測は当たりますか？<span class="faq-toggle" aria-hidden="true"></span></summary>
+        <div class="faq-a"><span class="a">A</span><p>本アプリは将来を予測するものではなく、過去のデータとの類似を示すものです。似た曲線を描いた銘柄が、同じ結果になるとは限りません。</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary><span class="q">Q</span>売買は自動で行われますか？<span class="faq-toggle" aria-hidden="true"></span></summary>
+        <div class="faq-a"><span class="a">A</span><p>いいえ。売買機能はなく、資産をお預かりすることもありません。</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary><span class="q">Q</span>初心者でも使えますか？<span class="faq-toggle" aria-hidden="true"></span></summary>
+        <div class="faq-a"><span class="a">A</span><p>画面は専門用語を使わない設計です。ただし暗号資産の基礎知識と、取引に伴うリスクの理解は必要です。</p></div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary><span class="q">Q</span>料金や支払い方法は？<span class="faq-toggle" aria-hidden="true"></span></summary>
+        <div class="faq-a"><span class="a">A</span><p>詳細資料の中でご案内している料金・お申し込みページにすべて記載しています。販売価格、端末ごとのライセンス、動作要件までご確認のうえお申し込みください。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- 資料請求特典                                           -->
+<!-- =================================================== -->
+<section class="tokuten section bg-white" id="tokuten">
+  <div class="container narrow">
+    <header class="sec-head center reveal">
+      <p class="sec-badge">資料請求特典</p>
+      <h2 class="sec-title">資料をお受け取りの方へ、<span class="mk">2つの特典</span>をご用意しています。</h2>
+    </header>
+
+    <div class="tokuten-grid">
+      <div class="tokuten-card reveal">
+        <span class="tokuten-num">特典 1</span>
+        <h3>【特典名①をここに記載】</h3>
+        <p>【特典①のかんたんな説明をここに記載】</p>
+      </div>
+      <div class="tokuten-card reveal">
+        <span class="tokuten-num">特典 2</span>
+        <h3>【特典名②をここに記載】</h3>
+        <p>【特典②のかんたんな説明をここに記載】</p>
+      </div>
+    </div>
+
+    <p class="tokuten-note">※特典は、資料請求後にご案内するLINEにて、お届けします。<br>※特典は情報提供を目的としたものであり、利益を保証するものではありません。<br>※内容は予告なく変更・終了する場合があります。</p>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- CTA（最終）                                           -->
+<!-- =================================================== -->
+<section class="final-cta section" id="final-cta">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-copy">
+        <h2 class="cta-title">仕組みからリスク、料金のご案内まで。<br class="pc">詳しい資料をご用意しています。</h2>
+        <a class="btn-primary big" href="https://utage-system.com/p/JpcmqXh0SH2F">
+          無料で詳細資料を受け取る
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="cta-note">※メールアドレスのご登録で、詳しい資料（全14章）をお届けします。<br class="pc">※料金・お申し込みページへのご案内は、資料の中に記載しています。</p>
+      </div>
+      <div class="cta-visual">
+        <figure class="ph" data-src="cta-app.webp" data-size="1200×900（透過推奨）" data-alt="Crypto Novaのアプリイメージ" style="aspect-ratio:4/3"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- S9 / リスク注意・運営者情報（フッター）                   -->
+<!-- =================================================== -->
+<footer class="risk-footer" id="risk">
+  <div class="container narrow">
+    <h2 class="risk-title"><span class="notice-tag">NOTICE</span>リスクに関するご注意</h2>
+    <ul class="risk-list">
+      <li>暗号資産の価格は大きく変動します。本アプリの分析結果は将来の値動きを保証するものではありません。</li>
+      <li>本アプリの利用により損失が生じた場合でも、当社がこれを補填することはありません。</li>
+      <li>本アプリは投資助言・代理業、投資運用業のサービスではありません。</li>
+      <li>投資は、生活に影響のない余裕資金の範囲で行ってください。</li>
+    </ul>
+
+    <div class="footer-info">
+      <p>運営者情報：株式会社S・T・I</p>
+      <nav class="footer-links" aria-label="規約リンク">
+        <a href="https://utage-system.com/p/GmEAOaUJH50i" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
+        <a href="https://utage-system.com/p/vxZiZWdCKVAc" target="_blank" rel="noopener">プライバシーポリシー</a>
+      </nav>
+      <p class="copyright">© S・T・I Inc. — Crypto Nova（クリプトノヴァ）</p>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span>▶</span></a>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+  var bar = document.getElementById('sticky-cta');
+  if(!bar) return;
+  var onS = function(){
+    bar.classList.toggle('show', window.scrollY > 500);
+  };
+  window.addEventListener('scroll', onS, {passive:true});
+  onS();
+})();
+</script>
+</body>
+</html>

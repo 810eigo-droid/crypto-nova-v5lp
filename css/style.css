@@ -1172,3 +1172,95 @@ strong{ color:var(--blue-deep); font-weight:700; }
 }
 .footer-links a:hover{ color:#FFC98A; border-color:#FFC98A; }
 .copyright{ font-family:var(--mono); font-size:10px; letter-spacing:.2em; opacity:.55; }
+
+/* ===================================================
+   index2（改善テスト版）専用の追加クラス
+   ※既存ルールは変更していない（index.htmlに影響なし）
+   =================================================== */
+
+/* FVの強調 */
+.fv-ribbon .rb-strong{ font-weight:900; color:var(--blue-deep); }
+.fv-explain b{ font-weight:900; color:var(--blue-deep); }
+
+/* FV内CTA */
+.fv-cta{ margin-top:26px; }
+.fv-cta-tokuten{
+  margin-top:12px; font-size:12.5px; font-weight:700; color:var(--ink-dim);
+}
+.fv-cta-tokuten b{ color:#0E8C63; }
+
+/* スマホ：FV画像直下のCTA */
+.fv-cta-sp{ display:none; }
+@media (max-width:760px){
+  .fv-cta-sp{
+    display:block; text-align:center;
+    padding:16px 20px 6px;
+    position:relative; z-index:2;
+  }
+  .fv-cta-sp .btn-primary{ width:100%; max-width:420px; font-size:15.5px; padding:18px 20px; }
+}
+
+/* 中間CTAストリップ */
+.cta-strip{
+  max-width:640px; margin:64px auto 0;
+  text-align:center;
+  background:linear-gradient(120deg, var(--gold-pale), #FFF9EA);
+  border:1.5px solid rgba(229,185,78,.5);
+  border-radius:20px;
+  padding:34px 26px 30px;
+  box-shadow:0 12px 32px -14px rgba(200,154,43,.35);
+}
+.strip-lead{ font-size:14.5px; font-weight:700; color:var(--ink); margin-bottom:18px; }
+.strip-note{ margin-top:12px; font-size:12px; font-weight:700; color:var(--ink-dim); }
+@media (max-width:640px){
+  .cta-strip{ margin-top:44px; padding:26px 16px 24px; }
+  .cta-strip .btn-primary{ width:100%; font-size:15px; padding:18px 16px; }
+}
+
+/* 特典セクション */
+.tokuten-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:20px;
+  margin-bottom:28px;
+}
+@media (max-width:700px){ .tokuten-grid{ grid-template-columns:1fr; } }
+.tokuten-card{
+  background:var(--white);
+  border:1.5px solid rgba(229,185,78,.55);
+  border-radius:18px;
+  padding:30px 26px;
+  text-align:center;
+  box-shadow:var(--shadow-card);
+}
+.tokuten-num{
+  display:inline-block;
+  font-family:var(--latin); font-size:12px; font-weight:700; letter-spacing:.2em;
+  color:#5C4308;
+  background:linear-gradient(120deg, #FFE9A8, var(--gold));
+  border-radius:100px; padding:6px 20px;
+  margin-bottom:14px;
+}
+.tokuten-card h3{ font-size:17.5px; font-weight:900; letter-spacing:.04em; margin-bottom:10px; color:var(--ink); }
+.tokuten-card p{ font-size:13.5px; color:var(--ink-dim); font-weight:500; line-height:2; }
+.tokuten-note{ text-align:center; font-size:11.5px; color:var(--ink-faint); line-height:2; }
+
+/* スマホ固定CTAバー */
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:0; z-index:70;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  box-shadow:0 -6px 24px -8px rgba(23,50,77,.25);
+  transform:translateY(110%);
+  transition:transform .35s ease;
+  display:none;
+}
+.sticky-cta.show{ transform:none; }
+.sticky-cta a{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  font-weight:900; font-size:15px; letter-spacing:.05em; color:#fff;
+  background:linear-gradient(120deg, #E8833A 0%, var(--gold) 100%);
+  border-radius:100px; padding:15px 18px;
+  box-shadow:0 8px 22px -8px rgba(200,120,40,.6), inset 0 -2px 0 rgba(0,0,0,.12);
+}
+.sticky-cta a span{ font-size:11px; }
+@media (max-width:760px){ .sticky-cta{ display:block; } }
