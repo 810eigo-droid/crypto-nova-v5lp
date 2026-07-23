@@ -20,3 +20,14 @@
 - 本番は必ず `cryptonova.jp/sn/` 直下（index.html・shiryo.html・PDF・css・js・images を全て同階層に）。
 - サイト更新は GitHub の Download ZIP → サーバーの `sn/` に上書き、が正しい流れ。
 - LINEは「公式アカウント（Crypto Nova / @295egbws）」。個人アカウントではない。
+
+## 資料請求特典（LINEで配布）
+| 特典 | 名称 | アセット |
+|---|---|---|
+| ① | 暗号資産スタートガイド | https://utagesystem.s3.ap-northeast-1.amazonaws.com/clf7FTTCZapf/ubqJiW18AVBpVVq9t6lExUveLNTDbaxcpSxyu7Ea.webp |
+| ② | アルトコインの購入手順 | （画像未） |
+
+## A/Bテストページ
+- index2.html（キャッチ：次のビットコインを夢見る）→ https://cryptonova.jp/sn/index2.html
+- index3.html（キャッチ：夢を見たっていい）→ https://cryptonova.jp/sn/index3.html
+- 計画・結果記録: docs/ab-test.md
