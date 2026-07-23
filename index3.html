@@ -39,13 +39,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* このテストページ限定：スマホも見出しテキストのFVを表示（画像FVは使わない） */
+/* このテストページ限定：スマホ調整（画像FVは使わない） */
 @media (max-width:760px){
   .fv-sp{ display:none !important; }
   .fv-cta-sp{ display:none !important; }
-  .fv .fv-grid, .fv-coins{ display:grid !important; }
+  .fv{ padding-top:74px !important; }
+  .fv-orb{ display:block !important; }
   .fv-coins{ display:block !important; }
-  .fv{ padding-top:84px !important; }
+
+  /* ナビをコンパクトに（折り返し防止） */
+  .topnav{ padding:10px 14px !important; }
+  .brand{ gap:6px; }
+  .brand-name{ font-size:15px; white-space:nowrap; }
+  .nav-cta{ font-size:11.5px; padding:8px 14px; white-space:nowrap; }
+
+  /* リボンは1行・小さめ */
+  .fv-ribbon{ font-size:10.5px; padding:7px 12px; gap:6px; white-space:nowrap; letter-spacing:.02em; margin-bottom:16px; }
+
+  /* 並び替え：キャッチ→見出し→アプリデモ→説明→チップ→CTA */
+  .fv .fv-grid{ display:flex !important; flex-direction:column; gap:0; }
+  .fv-copy{ display:contents; }
+  .fv-ribbon{ order:1; align-self:flex-start; }
+  .fv-catch2{ order:2; align-self:flex-start; margin-right:auto; text-align:left; }
+  .fv-title{ order:3; font-size:23px !important; line-height:1.75 !important; margin-bottom:16px; }
+  .fv-visual{ order:4; margin-bottom:20px; }
+  .fv-explain{ order:5; font-size:13.5px; margin-bottom:14px; }
+  .fv-feats{ order:6; margin-bottom:18px; }
+  .fv-cta{ order:7; margin-top:0; text-align:center; }
+  .fv-cta .btn-primary{ width:100%; max-width:420px; font-size:15.5px; padding:18px 18px; }
+  .app-demo{ box-shadow:0 18px 44px -18px rgba(23,50,77,.35); }
 }
 .fv-catch2{
   display:inline-block;
@@ -122,11 +144,6 @@
         <span class="mk">30個並べる</span>アプリ。
       </h1>
 
-      <p class="fv-explain reveal d2">
-        <b>ビットコイン</b>などの<b>成長曲線</b>をAIが学習。<br class="pc">
-        <b>数百万のアルトコイン</b>から、似た曲線を描く銘柄を
-        <strong class="hl">類似率が高い順に30銘柄</strong>、自動で<b>表示</b>します。
-      </p>
 
       <ul class="fv-feats reveal d3">
         <li><i></i><b>数百万 → 30銘柄</b>に絞り込み</li>
@@ -147,7 +164,7 @@
           <span class="ad-name">Crypto Nova</span>
         </div>
         <div class="app-demo-screen">
-          <p class="ad-cap">ビットコインの成長曲線に<b>似た銘柄</b>を探す</p>
+          <p class="ad-cap">過去の成長曲線に<b>"似た銘柄"</b>を探す</p>
           <div class="ad-chart">
             <canvas id="hero-chart"></canvas>
             <span class="ad-sim">類似率&nbsp;<b id="hero-sim">0.0</b>%</span>
