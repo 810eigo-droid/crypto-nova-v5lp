@@ -27,7 +27,8 @@
 | ① | 【保存版】はじめての暗号資産ガイド | https://utagesystem.s3.ap-northeast-1.amazonaws.com/clf7FTTCZapf/ubqJiW18AVBpVVq9t6lExUveLNTDbaxcpSxyu7Ea.webp |
 | ② | 【保存版】世界の暗号資産にアクセスする手順書 | （画像未） |
 
-## A/Bテストページ
-- index2.html（キャッチ：次のビットコインを夢見る）→ https://cryptonova.jp/sn/index2.html
-- index3.html（キャッチ：夢を見たっていい）→ https://cryptonova.jp/sn/index3.html
-- 計画・結果記録: docs/ab-test.md
+## LPのバリエーション
+- **index.html（本番・広告のリンク先）＝ 案2**（キャッチ：次のビットコインを夢見る）※2026-07-23昇格
+- index2.html（案2の控え・noindex）→ https://cryptonova.jp/sn/index2.html
+- index3.html（案3・noindex・未使用）→ https://cryptonova.jp/sn/index3.html
+- 経緯・計画: docs/ab-test.md

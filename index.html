@@ -38,6 +38,51 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* 本番ページ：スマホはテキストFV表示（fv-sp画像は使わない） */
+@media (max-width:760px){
+  .fv-sp{ display:none !important; }
+  .fv-cta-sp{ display:none !important; }
+  .fv{ padding-top:74px !important; }
+  .fv-orb{ display:block !important; }
+  .fv-coins{ display:block !important; }
+
+  /* ナビをコンパクトに（折り返し防止） */
+  .topnav{ padding:10px 14px !important; }
+  .brand{ gap:6px; }
+  .brand-name{ font-size:15px; white-space:nowrap; }
+  .nav-cta{ font-size:11.5px; padding:8px 14px; white-space:nowrap; }
+
+  /* リボンは1行・小さめ */
+  .fv-ribbon{ font-size:10.5px; padding:7px 12px; gap:6px; white-space:nowrap; letter-spacing:.02em; margin-bottom:16px; }
+
+  /* 並び替え：キャッチ→見出し→アプリデモ→説明→チップ→CTA */
+  .fv .fv-grid{ display:flex !important; flex-direction:column; gap:0; }
+  .fv-copy{ display:contents; }
+  .fv-ribbon{ order:1; align-self:flex-start; }
+  .fv-catch2{ order:2; align-self:flex-start; margin-right:auto; text-align:left; }
+  .fv-title{ order:3; font-size:23px !important; line-height:1.75 !important; margin-bottom:16px; }
+  .fv-visual{ order:4; margin-bottom:20px; }
+  .fv-explain{ order:5; font-size:13.5px; margin-bottom:14px; }
+  .fv-feats{ order:6; margin-bottom:18px; }
+  .fv-cta{ order:7; margin-top:0; text-align:center; }
+  .fv-cta .btn-primary{ width:100%; max-width:420px; font-size:15.5px; padding:18px 18px; }
+  .app-demo{ box-shadow:0 18px 44px -18px rgba(23,50,77,.35); }
+}
+.fv-catch2{
+  display:inline-block;
+  font-size:clamp(15px,2.2vw,21px); font-weight:900; letter-spacing:.05em;
+  color:var(--blue-deep);
+  border-bottom:3px solid var(--gold);
+  padding-bottom:6px; margin-bottom:18px;
+  line-height:1.9;
+}
+.fv-title--b{ font-size:clamp(23px,3.2vw,37px) !important; line-height:1.75 !important; }
+@media (min-width:761px){
+  .fv-catch2 .sp{ display:none; }
+  .fv-cta-sp{ display:none !important; }
+}
+</style>
 </head>
 <body>
 
@@ -85,27 +130,35 @@
       alt="Crypto Nova｜相場を、自分の目で読めるようになる。ビットコインなどの成長曲線をAIが学習し、数百万のアルトコインから似た曲線の銘柄を類似率が高い順に30銘柄、自動で表示します。">
   </figure>
 
+  <div class="fv-cta-sp">
+    <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+    <p class="fv-cta-tokuten">お受け取りの方に、<b>2つの特典</b>をご用意しています。</p>
+        <p class="fv-cta-names">①【保存版】はじめての暗号資産ガイド　②【保存版】世界の暗号資産にアクセスする手順書</p>
+  </div>
+
   <div class="container fv-grid">
     <div class="fv-copy">
-      <p class="fv-ribbon reveal"><span class="ribbon-star">✦</span>暗号資産の分析アプリ<span class="ribbon-div">|</span><b>Crypto&nbsp;Nova</b></p>
+      <p class="fv-ribbon reveal"><span class="ribbon-star">✦</span><b class="rb-strong">暗号資産の分析アプリ</b><span class="ribbon-div">|</span><b>Crypto&nbsp;Nova</b></p>
 
-      <h1 class="fv-title reveal d1">
-        相場を、<br>
-        <span class="mk">自分の目で読める</span><br>
-        ようになる。
+      <p class="fv-catch2 reveal">"次のビットコイン"を夢見る。<br class="sp">その前に、データを見る。</p>
+
+      <h1 class="fv-title fv-title--b reveal d1">
+        ビットコインの成長曲線に<br class="pc">
+        <span class="mk">"似た銘柄"</span>を、AIが探して<br class="pc">
+        <span class="mk">30個並べる</span>アプリ。
       </h1>
 
-      <p class="fv-explain reveal d2">
-        ビットコインなどの<strong>成長曲線をAIが学習</strong>。<br class="pc">
-        数百万のアルトコインから、似た曲線を描く銘柄を
-        <strong class="hl">類似率が高い順に30銘柄</strong>、自動で表示します。
-      </p>
 
       <ul class="fv-feats reveal d3">
-        <li><i></i>数百万 → <b>30銘柄</b>に絞り込み</li>
+        <li><i></i><b>数百万 → 30銘柄</b>に絞り込み</li>
         <li><i></i>類似率で<b>順位づけ</b></li>
         <li><i></i>注意銘柄に<b>警告マーク</b></li>
       </ul>
+
+      <div class="fv-cta reveal d4">
+        <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+        <p class="fv-cta-tokuten">お受け取りの方に、<b>2つの特典</b>をご用意しています。</p>
+      </div>
     </div>
 
     <div class="fv-visual reveal d2">
@@ -115,7 +168,7 @@
           <span class="ad-name">Crypto Nova</span>
         </div>
         <div class="app-demo-screen">
-          <p class="ad-cap">ビットコインの成長曲線に<b>似た銘柄</b>を探す</p>
+          <p class="ad-cap">過去の成長曲線に<b>"似た銘柄"</b>を探す</p>
           <div class="ad-chart">
             <canvas id="hero-chart"></canvas>
             <span class="ad-sim">類似率&nbsp;<b id="hero-sim">0.0</b>%</span>
@@ -298,6 +351,12 @@
       その<strong>絞り込みだけ</strong>を、機械に任せる。<br class="pc">
       そこから先の<strong>「調べる・考える・決める」は、あなたの仕事</strong>です。</p>
     </div>
+
+    <div class="cta-strip reveal">
+      <p class="strip-lead">仕組みの詳細は、無料の資料（全14章）にまとめています。</p>
+      <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+      <p class="strip-note">お受け取りの方に、2つの特典をご用意しています。</p>
+    </div>
   </div>
 </section>
 
@@ -363,6 +422,12 @@
       できないことを先に書くのは、<br>
       <strong class="mk">正しく知ったうえで、選んでいただきたいから</strong>です。
     </p>
+
+    <div class="cta-strip reveal">
+      <p class="strip-lead">できること・できないことの全文は、資料でご確認いただけます。</p>
+      <a class="btn-primary" href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span class="btn-arrow" aria-hidden="true">→</span></a>
+      <p class="strip-note">お受け取りの方に、2つの特典をご用意しています。</p>
+    </div>
   </div>
 </section>
 
@@ -493,6 +558,33 @@
 </section>
 
 <!-- =================================================== -->
+<!-- 資料請求特典                                           -->
+<!-- =================================================== -->
+<section class="tokuten section bg-white" id="tokuten">
+  <div class="container narrow">
+    <header class="sec-head center reveal">
+      <p class="sec-badge">資料請求特典</p>
+      <h2 class="sec-title">資料をお受け取りの方へ、<span class="mk">2つの特典</span>をご用意しています。</h2>
+    </header>
+
+    <div class="tokuten-grid">
+      <div class="tokuten-card reveal">
+        <span class="tokuten-num">特典 1</span>
+        <h3>【保存版】はじめての暗号資産ガイド</h3>
+        <p>これから暗号資産にふれる方のために、基礎知識をひとつにまとめたガイドです。</p>
+      </div>
+      <div class="tokuten-card reveal">
+        <span class="tokuten-num">特典 2</span>
+        <h3>【保存版】世界の暗号資産にアクセスする手順書</h3>
+        <p>口座開設からアルトコイン購入までの流れを、手順に沿ってまとめた資料です。</p>
+      </div>
+    </div>
+
+    <p class="tokuten-note">※特典は、ご登録のメールまたはLINEにてお届けします。<br>※特典は情報提供を目的としたものであり、利益を保証するものではありません。<br>※内容は予告なく変更・終了する場合があります。</p>
+  </div>
+</section>
+
+<!-- =================================================== -->
 <!-- CTA（最終）                                           -->
 <!-- =================================================== -->
 <section class="final-cta section" id="final-cta">
@@ -504,14 +596,7 @@
           無料で詳細資料を受け取る
           <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
-        <div class="cta-tokuten-mini">
-          <p class="ctm-head">資料請求特典（メール／LINEでお届け）</p>
-          <ul>
-            <li>【保存版】はじめての暗号資産ガイド</li>
-            <li>【保存版】世界の暗号資産にアクセスする手順書</li>
-          </ul>
-        </div>
-        <p class="cta-note">※メールアドレスのご登録で、詳しい資料（全14章）をお届けします。<br class="pc">※料金・お申し込みページへのご案内は、資料の中に記載しています。<br class="pc">※特典は情報提供を目的としたものであり、利益を保証するものではありません。</p>
+        <p class="cta-note">※メールアドレスのご登録で、詳しい資料（全14章）をお届けします。<br class="pc">※料金・お申し込みページへのご案内は、資料の中に記載しています。</p>
       </div>
       <div class="cta-visual">
         <figure class="ph" data-src="cta-app.webp" data-size="1200×900（透過推奨）" data-alt="Crypto Novaのアプリイメージ" style="aspect-ratio:4/3"></figure>
@@ -546,6 +631,21 @@
 
 </main>
 
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る<span>▶</span></a>
+</div>
+
 <script src="js/main.js"></script>
+<script>
+(function(){
+  var bar = document.getElementById('sticky-cta');
+  if(!bar) return;
+  var onS = function(){
+    bar.classList.toggle('show', window.scrollY > 500);
+  };
+  window.addEventListener('scroll', onS, {passive:true});
+  onS();
+})();
+</script>
 </body>
 </html>
