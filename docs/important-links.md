@@ -21,7 +21,7 @@
 - サイト更新は GitHub の Download ZIP → サーバーの `sn/` に上書き、が正しい流れ。
 - LINEは「公式アカウント（Crypto Nova / @295egbws）」。個人アカウントではない。
 
-## 資料請求特典（LINEで配布）
+## 資料請求特典（メール／LINEで配布）
 | 特典 | 名称 | アセット |
 |---|---|---|
 | ① | 【保存版】はじめての暗号資産ガイド | https://utagesystem.s3.ap-northeast-1.amazonaws.com/clf7FTTCZapf/ubqJiW18AVBpVVq9t6lExUveLNTDbaxcpSxyu7Ea.webp |
