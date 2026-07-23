@@ -24,8 +24,8 @@
 ## 資料請求特典（LINEで配布）
 | 特典 | 名称 | アセット |
 |---|---|---|
-| ① | 暗号資産スタートガイド | https://utagesystem.s3.ap-northeast-1.amazonaws.com/clf7FTTCZapf/ubqJiW18AVBpVVq9t6lExUveLNTDbaxcpSxyu7Ea.webp |
-| ② | アルトコインの購入手順 | （画像未） |
+| ① | 【保存版】はじめての暗号資産ガイド | https://utagesystem.s3.ap-northeast-1.amazonaws.com/clf7FTTCZapf/ubqJiW18AVBpVVq9t6lExUveLNTDbaxcpSxyu7Ea.webp |
+| ② | 【保存版】世界の暗号資産にアクセスする手順書 | （画像未） |
 
 ## A/Bテストページ
 - index2.html（キャッチ：次のビットコインを夢見る）→ https://cryptonova.jp/sn/index2.html
