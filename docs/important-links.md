@@ -27,6 +27,12 @@
 | ① | 【保存版】はじめての暗号資産ガイド | https://utagesystem.s3.ap-northeast-1.amazonaws.com/clf7FTTCZapf/ubqJiW18AVBpVVq9t6lExUveLNTDbaxcpSxyu7Ea.webp |
 | ② | 【保存版】世界の暗号資産にアクセスする手順書 | （画像未） |
 
+## 記事型クッションLP（2026-07-24新設・クライアント要望）
+- ファイル: article.html → 設置後URL: https://cryptonova.jp/sn/article.html
+- 用途: SmartNews向けの物語風・記事型LP。原稿は堀部様支給の文章をそのまま使用
+- 誘導先（2か所のCTA）: https://cryptonova.jp/evidence-info/index.html#results
+- CSS内蔵の1ファイル完結（style.cssに依存しない）・noindex
+
 ## LPのバリエーション
 - **index.html（本番・広告のリンク先）＝ 案2**（キャッチ：次のビットコインを夢見る）※2026-07-23昇格
 - index2.html（案2の控え・noindex）→ https://cryptonova.jp/sn/index2.html

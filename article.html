@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>次のビットコインを見つける｜Crypto Nova コラム</title>
+<meta name="description" content="歴史は繰り返さない。しかし、必ず“韻”を踏む。時代の転換点と暗号資産市場について、Crypto Novaが考えていること。">
+<meta name="robots" content="noindex">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Crypto Nova（クリプトノヴァ）">
+<meta property="og:title" content="次のビットコインを見つける">
+<meta property="og:description" content="歴史は繰り返さない。しかし、必ず“韻”を踏む。">
+<meta property="og:locale" content="ja_JP">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B6FD0'/%3E%3Cpath d='M16 5l2.4 8.6L27 16l-8.6 2.4L16 27l-2.4-8.6L5 16l8.6-2.4z' fill='%23FFE9A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#FDFBF7;        /* 生成りの紙色 */
+  --paper-deep:#F6F1E7;
+  --ink:#1F2A38;          /* 本文の墨色 */
+  --ink-dim:#5A6B7E;
+  --navy:#17324D;
+  --blue:#1B6FD0;
+  --gold:#C89A2B;
+  --gold-soft:#E5B94E;
+  --line:#E3DACA;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:2.2;
+  letter-spacing:.06em;
+  -webkit-font-smoothing:antialiased;
+}
+a{ color:inherit; text-decoration:none; }
+::selection{ background:rgba(229,185,78,.35); }
+
+/* 読了プログレスバー */
+.progress{ position:fixed; top:0; left:0; width:100%; height:3px; z-index:50; background:transparent; }
+.progress i{ display:block; height:100%; width:0; background:linear-gradient(90deg,var(--gold),var(--gold-soft)); transition:width .1s linear; }
+
+/* ヘッダー */
+.head{
+  border-bottom:1px solid var(--line);
+  background:rgba(253,251,247,.92); backdrop-filter:blur(6px);
+  position:sticky; top:0; z-index:40;
+}
+.head-in{
+  max-width:720px; margin:0 auto; padding:14px 22px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{ font-family:var(--sans); font-weight:700; font-size:15px; color:var(--navy); letter-spacing:.05em; }
+.brand .star{ color:var(--gold); margin-right:6px; }
+.head-tag{ font-family:var(--sans); font-size:11px; color:var(--ink-dim); letter-spacing:.22em; }
+
+/* 記事ヘッダー */
+.hero{ max-width:720px; margin:0 auto; padding:72px 22px 46px; }
+.kicker{
+  font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.3em;
+  color:var(--gold); margin-bottom:22px;
+}
+.kicker::after{ content:""; display:inline-block; width:44px; height:1px; background:var(--gold); vertical-align:middle; margin-left:14px; opacity:.6; }
+h1{
+  font-size:clamp(30px,5.4vw,44px); font-weight:700; line-height:1.55;
+  color:var(--navy); letter-spacing:.05em; margin-bottom:22px;
+}
+.lede{
+  font-size:clamp(16px,2.6vw,19px); color:var(--ink-dim); line-height:2;
+  padding-left:16px; border-left:3px solid var(--gold);
+}
+.meta{
+  margin-top:30px; font-family:var(--sans); font-size:12px; color:var(--ink-dim);
+  display:flex; gap:18px; letter-spacing:.08em;
+}
+
+/* 本文 */
+.article{ max-width:720px; margin:0 auto; padding:8px 22px 40px; }
+.article p{ margin-bottom:2.1em; text-align:justify; }
+.article p b{ font-weight:600; color:var(--navy); }
+
+/* 区切り飾り */
+.orn{ text-align:center; color:var(--gold); font-size:15px; letter-spacing:.9em; padding-left:.9em; margin:56px 0; user-select:none; }
+
+/* 引用 */
+blockquote{
+  margin:56px 0; padding:38px 30px;
+  background:var(--paper-deep); border-radius:4px; position:relative;
+  font-size:clamp(17px,2.8vw,21px); font-weight:600; color:var(--navy);
+  line-height:2; text-align:center; letter-spacing:.08em;
+}
+blockquote::before{
+  content:"“"; position:absolute; top:2px; left:16px;
+  font-family:Georgia,serif; font-size:64px; color:var(--gold); opacity:.55; line-height:1;
+}
+blockquote cite{ display:block; margin-top:14px; font-size:12px; font-weight:400; font-style:normal; color:var(--ink-dim); font-family:var(--sans); }
+
+/* エビデンス誘導CTA */
+.evi{
+  margin:64px 0; text-align:center;
+}
+.evi a{
+  display:block;
+  background:linear-gradient(135deg,#1E68C4,#114E97);
+  color:#fff; border-radius:6px;
+  padding:26px 26px 24px;
+  box-shadow:0 16px 36px -14px rgba(17,78,151,.45);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.evi a:hover{ transform:translateY(-2px); box-shadow:0 22px 44px -14px rgba(17,78,151,.55); }
+.evi .evi-line{
+  font-family:var(--sans); font-weight:700;
+  font-size:clamp(15px,2.9vw,18px); letter-spacing:.06em; line-height:1.8;
+}
+.evi .evi-line::before, .evi .evi-line::after{ content:"── "; color:var(--gold-soft); }
+.evi .evi-line::after{ content:" ──"; }
+.evi .evi-sub{
+  margin-top:8px; font-family:var(--sans); font-size:12px; color:#CFE2F8; letter-spacing:.14em;
+}
+.evi .evi-sub::after{ content:"▶"; font-size:10px; margin-left:8px; color:var(--gold-soft); }
+
+/* フッター */
+footer{
+  border-top:1px solid var(--line); background:var(--paper-deep);
+  margin-top:80px; padding:52px 22px 44px;
+  font-family:var(--sans);
+}
+.foot-in{ max-width:720px; margin:0 auto; }
+.risk{
+  font-size:12.5px; color:var(--ink-dim); line-height:1.95; letter-spacing:.04em;
+  padding:20px 22px; background:var(--paper); border:1px solid var(--line); border-radius:6px;
+  margin-bottom:30px;
+}
+.risk b{ display:block; color:var(--navy); margin-bottom:8px; font-size:12.5px; letter-spacing:.14em; }
+.foot-links{ display:flex; flex-wrap:wrap; gap:10px 26px; font-size:12.5px; color:var(--ink-dim); margin-bottom:16px; }
+.foot-links a{ border-bottom:1px solid var(--line); padding-bottom:2px; }
+.foot-links a:hover{ color:var(--navy); }
+.copy{ font-size:11.5px; color:var(--ink-dim); letter-spacing:.06em; }
+
+@media (max-width:600px){
+  body{ font-size:15.5px; line-height:2.1; }
+  .hero{ padding:52px 20px 36px; }
+  .orn{ margin:44px 0; }
+  blockquote{ padding:32px 20px; margin:44px 0; }
+  .evi{ margin:52px 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><i id="pgb"></i></div>
+
+<header class="head">
+  <div class="head-in">
+    <a class="brand" href="https://cryptonova.jp/sn/"><span class="star">✦</span>Crypto <b>Nova</b></a>
+    <span class="head-tag">COLUMN</span>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="kicker">SPECIAL FEATURE</p>
+  <h1>次のビットコインを見つける</h1>
+  <p class="lede">歴史は繰り返さない。しかし、必ず“韻”を踏む。</p>
+  <div class="meta"><span>Crypto Nova 編集チーム</span><span>読了目安：約3分</span></div>
+</div>
+
+<main class="article">
+
+  <p>2009年頃、ビットコインは一部の技術者や投資家しか知らない無名のデジタル資産でした。</p>
+
+  <p>当時は現在では考えられないほど低い価格で取引されており、その可能性にいち早く気づいた一部の人たちは、その後の価格上昇によって大きな資産を築いたことは広く知られています。しかし、そのチャンスを掴めた人は、ごくわずかでした。</p>
+
+  <p>2008年、世界経済を揺るがしたリーマンショック。その翌年、多くの人が金融危機の混乱に目を向けるなか、ごく一部の人だけがビットコインという新しい可能性に目を向けていました。歴史を振り返ると、大きな時代の転換期には、新しい価値や新しい市場が生まれるもの。そして今、世界は再び大きな転換点を迎えています。</p>
+
+  <p>長年にわたる金融緩和や技術革新、そしてWeb3・AIの発展によって、新たな経済圏が形成されつつあります。</p>
+
+  <blockquote>
+    「歴史は同じ出来事を繰り返さない。<br>しかし、必ず韻を踏む。」
+    <cite>― 市場サイクルを長年研究してきた著名な投資家の言葉</cite>
+  </blockquote>
+
+  <p>この言葉は、市場サイクルを長年研究してきた著名な投資家が残した言葉です。もちろん、次のビットコインが現れると断言することはできません。また、すべてのアルトコインが大きく成長するわけでもありません。しかし、歴史が示してきたのは、時代が大きく変わる局面では、新たな価値が誕生し、その変化を早く捉えた人ほど恩恵を受けやすいという事実です。</p>
+
+  <p class="orn">✦ ✦ ✦</p>
+
+  <p><b>Crypto Nova は、その変化の兆しを見つけるためのツールです。</b><br>
+  私たちは、まだほとんど知られていないアルトコインの中から、市場やコミュニティの動きを分析し、有望な可能性を持つプロジェクトを発見する仕組みを構築しました。<br>
+  実際に、一般にはほとんど認知されていなかったプロジェクトが、その後大きな注目を集めた事例は数多く存在します。</p>
+
+  <div class="evi">
+    <a href="https://cryptonova.jp/evidence-info/index.html#results">
+      <span class="evi-line">Crypto Novaの実績・発見事例・エビデンスを見る</span>
+      <span class="evi-sub">クリックして事例ページへ</span>
+    </a>
+  </div>
+
+  <p>それでも、多くの人がアルトコイン投資に踏み出せない理由があります。<br>
+  それは、<b>「知らない」から</b>です。<br>
+  人は理解できないものに、不安や恐怖を感じます。仮想通貨に興味はあっても、「難しそう」「買い方が分からない」という理由だけで、一歩を踏み出せない人は少なくありません。</p>
+
+  <p>ここまで読み進めてくださったあなたは、おそらく新しい技術や投資に高い関心を持ち、自ら情報収集をしている方でしょう。そのような方であれば、一度購入方法を理解するだけで、「アルトコインは思っていたよりも簡単に購入できる」と感じるはずです。そして、これまで遠い世界だと思っていた仮想通貨投資が、より身近な選択肢へと変わるでしょう。</p>
+
+  <p>Crypto Novaは、「必ず利益が出る銘柄」を示すツールではありません。市場の変化を分析し、次の可能性を秘めたプロジェクトを、誰よりも早く見つけるためのサポートツールです。投資の最終判断は、あくまでもご自身にあります。しかし、その判断材料をより早く、適切な量で、正確に得られることは、大きなアドバンテージになると私たちは考えています。</p>
+
+  <p class="orn">✦ ✦ ✦</p>
+
+  <p>私たちは今、かつてビットコインがそうだったように、次の時代を担う“新しい価値”を探しています。その兆しを、誰もが見つけられる仕組みは作れないだろうか。そんな想いから生まれたのが、Crypto Novaです。ビットコインのように、未来の「クリプト界の新星」を探し出すためのツール。時代が動いてから知るのではなく、動き始める前に気づくために。Crypto Novaは、その可能性を追い続けるすべての人を支えるために存在します。</p>
+
+  <p>私たちは今、歴史が新しい1ページを書き始める、その瞬間に立ち会っているのかもしれません。その変化を見逃すか、いち早く捉えるか。その違いを生むのは、未来ではなく「今」の行動です。</p>
+
+  <div class="evi">
+    <a href="https://cryptonova.jp/evidence-info/index.html#results">
+      <span class="evi-line">Crypto Novaの実績・発見事例・エビデンスを見る</span>
+      <span class="evi-sub">クリックして事例ページへ</span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="risk">
+      <b>リスクに関するご注意</b>
+      暗号資産の価格は大きく変動します。本記事および本アプリの分析結果は、将来の値動きや利益を保証するものではありません。本アプリは投資助言・代理業、投資運用業のサービスではありません。投資は、生活に影響のない余裕資金の範囲で行ってください。
+    </div>
+    <nav class="foot-links" aria-label="規約リンク">
+      <a href="https://utage-system.com/p/GmEAOaUJH50i" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
+      <a href="https://utage-system.com/p/vxZiZWdCKVAc" target="_blank" rel="noopener">プライバシーポリシー</a>
+    </nav>
+    <p class="copy">運営者情報：株式会社S・T・I　© S・T・I Inc. — Crypto Nova（クリプトノヴァ）</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('pgb');
+  function u(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+  }
+  window.addEventListener('scroll',u,{passive:true}); u();
+})();
+</script>
+</body>
+</html>
