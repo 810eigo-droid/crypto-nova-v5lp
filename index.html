@@ -82,6 +82,29 @@
   .fv-catch2 .sp{ display:none; }
   .fv-cta-sp{ display:none !important; }
 }
+.phone-hero{
+  position:relative;
+  max-width:300px; margin:0 auto;
+}
+.phone-hero::before{
+  content:""; position:absolute; inset:-12% -22%;
+  background:
+    radial-gradient(closest-side at 50% 42%, rgba(229,185,78,.34), transparent 72%),
+    radial-gradient(closest-side at 50% 60%, rgba(79,163,232,.22), transparent 78%);
+  filter:blur(6px);
+  z-index:0;
+}
+.phone-hero img{
+  position:relative; z-index:1;
+  display:block; width:100%; height:auto;
+  filter:drop-shadow(0 30px 44px rgba(23,50,77,.38));
+  animation:phoneFloat 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce){ .phone-hero img{ animation:none; } }
+@keyframes phoneFloat{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-12px); }
+}
 </style>
 </head>
 <body>
@@ -127,7 +150,7 @@
   <figure class="fv-sp">
     <img src="images/fv-sp.webp" width="887" height="1774"
       onerror="this.closest('.fv-sp').style.display='none'"
-      alt="Crypto Nova｜相場を、自分の目で読めるようになる。ビットコインなどの成長曲線をAIが学習し、数百万のアルトコインから似た曲線の銘柄を類似率が高い順に30銘柄、自動で表示します。">
+      alt="Crypto Nova｜&quot;次のビットコイン&quot;を見つけるアプリ。数百万のアルトコインから30銘柄に絞り込み、類似率で順位づけ、注意銘柄には警告マークを表示します。">
   </figure>
 
   <div class="fv-cta-sp">
@@ -140,12 +163,11 @@
     <div class="fv-copy">
       <p class="fv-ribbon reveal"><span class="ribbon-star">✦</span><b class="rb-strong">暗号資産の分析アプリ</b><span class="ribbon-div">|</span><b>Crypto&nbsp;Nova</b></p>
 
-      <p class="fv-catch2 reveal">"次のビットコイン"を夢見る。<br class="sp">その前に、データを見る。</p>
+      <p class="fv-catch2 reveal">夢で終わらせない。<br class="sp">まず、データを見る。</p>
 
       <h1 class="fv-title fv-title--b reveal d1">
-        ビットコインの成長曲線に<br class="pc">
-        <span class="mk">"似た銘柄"</span>を、AIが探して<br class="pc">
-        <span class="mk">30個並べる</span>アプリ。
+        <span class="mk">"次のビットコイン"</span>を<br class="pc">
+        見つけるアプリ。
       </h1>
 
 
@@ -162,21 +184,10 @@
     </div>
 
     <div class="fv-visual reveal d2">
-      <div class="app-demo">
-        <div class="app-demo-bar">
-          <span class="ad-dot"></span><span class="ad-dot"></span><span class="ad-dot"></span>
-          <span class="ad-name">Crypto Nova</span>
-        </div>
-        <div class="app-demo-screen">
-          <p class="ad-cap">過去の成長曲線に<b>"似た銘柄"</b>を探す</p>
-          <div class="ad-chart">
-            <canvas id="hero-chart"></canvas>
-            <span class="ad-sim">類似率&nbsp;<b id="hero-sim">0.0</b>%</span>
-          </div>
-          <div class="ad-next" aria-hidden="true"><span class="ad-next-pulse"></span>NEXT&nbsp;BTC</div>
-          <p class="ad-reslabel">似た曲線の銘柄（類似率順）</p>
-          <ul class="ad-results" id="hero-results" aria-hidden="true"></ul>
-        </div>
+      <div class="phone-hero">
+        <img src="images/app-phone.webp" width="452" height="868"
+             alt="Crypto Nova のアプリ画面。NEXT BTC ボタンから分析を開始できる。"
+             decoding="async">
       </div>
     </div>
   </div>
