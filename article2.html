@@ -166,6 +166,7 @@ img{ max-width:100%; display:block; }
   letter-spacing:.12em; max-width:760px; margin:0 auto;
 }
 .quote-sec .q-body .gold{ color:var(--gold-soft); }
+.quote-sec .q-body .q-l{ white-space:nowrap; }
 .quote-sec .q-cite{
   margin-top:34px; font-family:var(--sans); font-size:12px; letter-spacing:.2em; color:#B9C5D4;
 }
@@ -199,6 +200,38 @@ img{ max-width:100%; display:block; }
   letter-spacing:.16em; color:#4A3A12;
 }
 .evi .evi-sub::after{ content:"▶"; font-size:10px; margin-left:8px; }
+
+/* 資料請求ボタン（エビデンスCTAの下に併設） */
+.shiryo{ margin-top:16px; text-align:center; }
+.shiryo a{
+  display:block; background:#fff; border:2px solid var(--blue); border-radius:8px;
+  padding:19px 24px 17px; color:var(--blue);
+  font-family:var(--sans); font-weight:700; font-size:clamp(14px,2.8vw,16.5px);
+  letter-spacing:.05em; line-height:1.7;
+  box-shadow:0 12px 30px -14px rgba(27,111,208,.4);
+  transition:transform .18s ease, background .18s ease, color .18s ease;
+}
+.shiryo a:hover{ transform:translateY(-2px); background:var(--blue); color:#fff; }
+.shiryo a span{ display:block; margin-top:4px; font-size:11.5px; font-weight:500; letter-spacing:.12em; opacity:.8; }
+
+/* スマホ固定・資料請求バー */
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:0; z-index:55;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(7,19,34,.92); backdrop-filter:blur(8px);
+  transform:translateY(110%); transition:transform .3s ease;
+  display:none;
+}
+.sticky-cta.show{ transform:none; }
+.sticky-cta a{
+  display:block; text-align:center;
+  background:linear-gradient(135deg,#D9AC42,#B8892B); color:#20180A;
+  font-family:var(--sans); font-weight:700; font-size:15px; letter-spacing:.04em;
+  padding:14px 18px; border-radius:8px;
+  box-shadow:0 10px 26px -10px rgba(184,137,43,.6);
+}
+.sticky-cta a b{ font-weight:700; }
+@media (max-width:760px){ .sticky-cta{ display:block; } }
 
 /* ============ コールアウト ============ */
 .callout{
@@ -248,15 +281,17 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
 .copy{ font-size:11.5px; letter-spacing:.06em; }
 
 @media (max-width:600px){
-  body{ font-size:15.5px; line-height:2.1; }
+  body{ font-size:17.5px; line-height:2.15; }
   .block{ padding:78px 20px; }
-  .quote-sec{ padding:110px 20px; }
+  .quote-sec{ padding:110px 16px; }
+  .quote-sec .q-body{ font-size:19px; letter-spacing:.03em; }
   .final{ padding:110px 20px 96px; }
   .chapter{ gap:14px; margin-bottom:34px; }
   .ch-num{ font-size:40px; }
   .callout{ padding:26px 20px; }
   .honest{ padding:28px 20px; }
   .evi{ margin-top:54px; }
+  .risk{ font-size:13.5px; }
 }
 </style>
 </head>
@@ -288,8 +323,8 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
         <p class="ch-ttl">無名のデジタル資産</p>
       </div>
     </div>
-    <p class="rv">2009年頃、ビットコインは一部の技術者や投資家しか知らない無名のデジタル資産でした。</p>
-    <p class="rv">当時は現在では考えられないほど低い価格で取引されており、その可能性にいち早く気づいた一部の人たちは、その後の価格上昇によって大きな資産を築いたことは広く知られています。しかし、そのチャンスを掴めた人は、ごくわずかでした。</p>
+    <p class="rv">2009年頃、ビットコインは一部の技術者や投資家しか知らない<b>無名のデジタル資産</b>でした。</p>
+    <p class="rv">当時は現在では考えられないほど低い価格で取引されており、その可能性にいち早く気づいた一部の人たちは、その後の価格上昇によって大きな資産を築いたことは広く知られています。しかし、<b>そのチャンスを掴めた人は、ごくわずかでした。</b></p>
   </div>
 </section>
 
@@ -303,7 +338,7 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
         <p class="ch-ttl">転換点は、静かに始まる</p>
       </div>
     </div>
-    <p class="rv">2008年、世界経済を揺るがしたリーマンショック。その翌年、多くの人が金融危機の混乱に目を向けるなか、ごく一部の人だけがビットコインという新しい可能性に目を向けていました。歴史を振り返ると、大きな時代の転換期には、新しい価値や新しい市場が生まれるもの。そして今、世界は再び大きな転換点を迎えています。</p>
+    <p class="rv">2008年、世界経済を揺るがしたリーマンショック。その翌年、多くの人が金融危機の混乱に目を向けるなか、ごく一部の人だけがビットコインという新しい可能性に目を向けていました。歴史を振り返ると、<b>大きな時代の転換期には、新しい価値や新しい市場が生まれるもの</b>。そして今、<b>世界は再び大きな転換点を迎えています</b>。</p>
     <p class="rv">長年にわたる金融緩和や技術革新、そしてWeb3・AIの発展によって、新たな経済圏が形成されつつあります。</p>
   </div>
 </section>
@@ -311,7 +346,7 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
 <!-- ============ 引用（全幅） ============ -->
 <section class="quote-sec">
   <span class="q-mark" aria-hidden="true">“</span>
-  <p class="q-body rv">歴史は同じ出来事を繰り返さない。<br>しかし、必ず<span class="gold">韻を踏む</span>。</p>
+  <p class="q-body rv"><span class="q-l">歴史は同じ出来事を繰り返さない。</span><br><span class="q-l">しかし、必ず<span class="gold">韻を踏む</span>。</span></p>
   <p class="q-cite rv">― 市場サイクルを長年研究してきた著名な投資家の言葉</p>
 </section>
 
@@ -325,18 +360,21 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
         <p class="ch-ttl">変化の兆しを、見つけるために</p>
       </div>
     </div>
-    <p class="rv">この言葉は、市場サイクルを長年研究してきた著名な投資家が残した言葉です。もちろん、次のビットコインが現れると断言することはできません。また、すべてのアルトコインが大きく成長するわけでもありません。しかし、歴史が示してきたのは、時代が大きく変わる局面では、新たな価値が誕生し、その変化を早く捉えた人ほど恩恵を受けやすいという事実です。</p>
+    <p class="rv">この言葉は、市場サイクルを長年研究してきた著名な投資家が残した言葉です。もちろん、次のビットコインが現れると断言することはできません。また、すべてのアルトコインが大きく成長するわけでもありません。しかし、歴史が示してきたのは、<b>時代が大きく変わる局面では、新たな価値が誕生し、その変化を早く捉えた人ほど恩恵を受けやすい</b>という事実です。</p>
     <div class="callout rv">
       <p class="co-big">Crypto Nova は、その変化の兆しを見つけるためのツールです。</p>
     </div>
     <p class="rv">私たちは、まだほとんど知られていないアルトコインの中から、市場やコミュニティの動きを分析し、有望な可能性を持つプロジェクトを発見する仕組みを構築しました。<br>
-    実際に、一般にはほとんど認知されていなかったプロジェクトが、その後大きな注目を集めた事例は数多く存在します。</p>
+    実際に、<b>一般にはほとんど認知されていなかったプロジェクトが、その後大きな注目を集めた事例は数多く存在します</b>。</p>
 
     <div class="evi rv">
       <a href="https://cryptonova.jp/evidence-info/index.html#results">
         <span class="evi-line">Crypto Novaの実績・発見事例・エビデンスを見る</span>
         <span class="evi-sub">クリックして事例ページへ</span>
       </a>
+    </div>
+    <div class="shiryo rv">
+      <a href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る（資料請求）<span>メール／LINEで特典2つもお届けします</span></a>
     </div>
   </div>
 </section>
@@ -354,7 +392,7 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
     <p class="rv">それでも、多くの人がアルトコイン投資に踏み出せない理由があります。<br>
     それは、<b>「知らない」から</b>です。<br>
     人は理解できないものに、不安や恐怖を感じます。仮想通貨に興味はあっても、「難しそう」「買い方が分からない」という理由だけで、一歩を踏み出せない人は少なくありません。</p>
-    <p class="rv">ここまで読み進めてくださったあなたは、おそらく新しい技術や投資に高い関心を持ち、自ら情報収集をしている方でしょう。そのような方であれば、一度購入方法を理解するだけで、「アルトコインは思っていたよりも簡単に購入できる」と感じるはずです。そして、これまで遠い世界だと思っていた仮想通貨投資が、より身近な選択肢へと変わるでしょう。</p>
+    <p class="rv">ここまで読み進めてくださったあなたは、おそらく新しい技術や投資に高い関心を持ち、自ら情報収集をしている方でしょう。そのような方であれば、一度購入方法を理解するだけで、<b>「アルトコインは思っていたよりも簡単に購入できる」</b>と感じるはずです。そして、これまで遠い世界だと思っていた仮想通貨投資が、より身近な選択肢へと変わるでしょう。</p>
   </div>
 </section>
 
@@ -370,7 +408,7 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
     </div>
     <div class="honest rv">
       <span class="h-tag">HONESTY</span>
-      <p>Crypto Novaは、「必ず利益が出る銘柄」を示すツールではありません。市場の変化を分析し、次の可能性を秘めたプロジェクトを、誰よりも早く見つけるためのサポートツールです。投資の最終判断は、あくまでもご自身にあります。しかし、その判断材料をより早く、適切な量で、正確に得られることは、大きなアドバンテージになると私たちは考えています。</p>
+      <p>Crypto Novaは、<b>「必ず利益が出る銘柄」を示すツールではありません</b>。市場の変化を分析し、次の可能性を秘めたプロジェクトを、誰よりも早く見つけるためのサポートツールです。<b>投資の最終判断は、あくまでもご自身にあります。</b>しかし、その判断材料をより早く、適切な量で、正確に得られることは、大きなアドバンテージになると私たちは考えています。</p>
     </div>
   </div>
 </section>
@@ -385,7 +423,7 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
         <p class="ch-ttl">歴史の、新しい1ページ</p>
       </div>
     </div>
-    <p class="rv">私たちは今、かつてビットコインがそうだったように、次の時代を担う“新しい価値”を探しています。その兆しを、誰もが見つけられる仕組みは作れないだろうか。そんな想いから生まれたのが、Crypto Novaです。ビットコインのように、未来の「クリプト界の新星」を探し出すためのツール。時代が動いてから知るのではなく、動き始める前に気づくために。Crypto Novaは、その可能性を追い続けるすべての人を支えるために存在します。</p>
+    <p class="rv">私たちは今、かつてビットコインがそうだったように、次の時代を担う“新しい価値”を探しています。その兆しを、誰もが見つけられる仕組みは作れないだろうか。そんな想いから生まれたのが、Crypto Novaです。ビットコインのように、未来の「クリプト界の新星」を探し出すためのツール。<b>時代が動いてから知るのではなく、動き始める前に気づくために。</b>Crypto Novaは、その可能性を追い続けるすべての人を支えるために存在します。</p>
     <p class="rv">私たちは今、歴史が新しい1ページを書き始める、その瞬間に立ち会っているのかもしれません。その変化を見逃すか、いち早く捉えるか。その違いを生むのは、未来ではなく<b>「今」の行動</b>です。</p>
 
     <div class="evi rv">
@@ -394,10 +432,17 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
         <span class="evi-sub">クリックして事例ページへ</span>
       </a>
     </div>
+    <div class="shiryo rv">
+      <a href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る（資料請求）<span>メール／LINEで特典2つもお届けします</span></a>
+    </div>
   </div>
 </section>
 
 </main>
+
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a href="https://utage-system.com/p/JpcmqXh0SH2F">無料で詳細資料を受け取る ▶</a>
+</div>
 
 <footer>
   <div class="foot-in">
@@ -427,6 +472,12 @@ footer{ background:#071322; color:#93A2B4; padding:56px 24px 46px; font-family:v
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
   },{threshold:.14});
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var bar2=document.getElementById('sticky-cta');
+  if(bar2){
+    var onS=function(){ bar2.classList.toggle('show', window.scrollY>600); };
+    window.addEventListener('scroll',onS,{passive:true}); onS();
+  }
 })();
 </script>
 </body>
