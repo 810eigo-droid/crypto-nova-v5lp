@@ -32,9 +32,14 @@
 - 用途: SmartNews向けの物語風・記事型LP。原稿は堀部様支給の文章をそのまま使用
 - 誘導先（2か所のCTA）: https://cryptonova.jp/evidence-info/index.html#results
 - CSS内蔵の1ファイル完結（style.cssに依存しない）・noindex
-- **article2.html**: 章立て＋背景画像＋スクロール演出のリッチ版（同じ原稿・同じ誘導先）
-  - 背景画像3枚（無くてもグラデーションで表示可）:
-    images/article-hero.webp（1920×1280）／article-quote.webp（1920×1080）／article-dawn.webp（1920×1280）
+- **章立て＋スクロール演出のリッチ版（同じ原稿・同じ誘導先）を2種類用意し、背景の有無で分けている：**
+  - **article2.html** … 背景なし（濃紺グラデーションのみ）。画像を置いても背景は出ない仕様
+  - **story.html** … 背景付き。下記3枚を images/ に置くと背景が表示される
+    - images/article-hero.webp（1920×1280・最初の全画面）
+    - images/article-quote.webp（1920×1080・名言セクション）
+    - images/article-dawn.webp（1920×1280・最終章）
+  - どちらを広告のリンク先にするかは、クライアント確認後に決定
+  - 背景画像が未設置でも story.html はグラデーションで表示される（安全）
 
 ## LPのバリエーション
 - **index.html（本番・広告のリンク先）＝ 案2**（キャッチ：次のビットコインを夢見る）※2026-07-23昇格
